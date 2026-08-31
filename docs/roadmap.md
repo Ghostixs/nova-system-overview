@@ -66,4 +66,3 @@ Future actions should not move from concept to implementation until these questi
 - Finished Discord AI assistant
 - Voice-first assistant
 - Robotics or wearable integration
-- Production support assistant integrated with the private Nova runtime
