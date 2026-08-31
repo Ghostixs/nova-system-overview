@@ -125,11 +125,7 @@ Read the complete [Roadmap](docs/roadmap.md).
 | [Security and privacy](docs/security-and-privacy.md) | Publication boundaries and security posture |
 | [Lessons learned](docs/lessons-learned.md) | Practical technical and operational takeaways |
 | [Case study](docs/case-study-qbittorrent-recovery.md) | Evidence-led diagnosis and minimal repair |
-| [Interview walkthrough](docs/interview-walkthrough.md) | A three-minute guided tour of Nova |
 
-## Interview walkthrough
-
-If you are reviewing this project for an interview, start with the [three-minute walkthrough](docs/interview-walkthrough.md), then open the [recovery case study](docs/case-study-qbittorrent-recovery.md). Together they show the current architecture, a real troubleshooting example, the limits of the project, and how I approach systems analysis.
 
 ## Privacy and security
 
