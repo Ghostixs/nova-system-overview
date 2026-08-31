@@ -1,0 +1,33 @@
+# Synthetic example only. This is not copied from the private Nova environment.
+services:
+  example-dashboard:
+    image: example/dashboard:1.0.0
+    container_name: example-dashboard
+    restart: unless-stopped
+    expose:
+      - "8080"
+    environment:
+      APP_MODE: "read-only"
+      LOG_LEVEL: "info"
+    volumes:
+      - example-dashboard-data:/var/lib/example
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /tmp
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    networks:
+      - example-internal
+
+volumes:
+  example-dashboard-data:
+
+networks:
+  example-internal:
+    internal: true

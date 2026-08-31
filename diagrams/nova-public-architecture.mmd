@@ -1,0 +1,74 @@
+flowchart TB
+  User["User"] --> Host["Windows 11 Host"]
+  Host --> Tail["Tailscale<br/>Host-level private access<br/><b>Working</b>"]
+  Host --> WSL["WSL2 Ubuntu Environment<br/><b>Working</b>"]
+
+  subgraph Runtime["Docker Service Layer"]
+    direction TB
+    Docker["Docker Engine<br/><b>Working</b>"]
+
+    subgraph Access["Access and Interfaces"]
+      direction LR
+      Home["Homepage"]
+      Proxy["Caddy"]
+      Admin["Portainer"]
+      AIUI["Open WebUI<br/><b>Partial</b>"]
+    end
+
+    subgraph Observe["Observability"]
+      direction LR
+      Metrics["Prometheus<br/>Node Exporter"]
+      Visual["Grafana"]
+      Logs["Loki<br/>Promtail"]
+      Uptime["Uptime Kuma"]
+    end
+
+    subgraph Operations["Operational Services"]
+      direction LR
+      HA["Home Assistant"]
+      Media["Media workflow"]
+      VPN["VPN-routed download"]
+      Vault["Vaultwarden"]
+    end
+
+    Docker --> Access
+    Docker --> Observe
+    Docker --> Operations
+    Metrics --> Visual
+    Logs --> Visual
+  end
+
+  WSL --> Docker
+
+  subgraph Knowledge["Engineering Knowledge"]
+    direction LR
+    Git["Private Git source"]
+    Docs["Technical docs<br/>runbooks and recovery"]
+  end
+
+  WSL --> Knowledge
+
+  subgraph Roadmap["AI and Automation Roadmap"]
+    direction TB
+    Core["Nova Core<br/><b>In Development</b>"]
+    Awareness["Nova Awareness<br/><b>In Development</b>"]
+    Retrieval["RAG and retrieval evaluation<br/><b>Planned</b>"]
+    Agents["Agent routing and MCP tools<br/><b>Planned</b>"]
+    Approval["Human-approved actions<br/><b>Planned</b>"]
+    Core -.-> Retrieval
+    Awareness -.-> Agents
+    Retrieval -.-> Agents
+    Agents -.-> Approval
+  end
+
+  AIUI -. "experimentation only" .-> Roadmap
+  Knowledge -. "evidence and design" .-> Roadmap
+
+  classDef working fill:#172554,stroke:#22d3ee,color:#f8fafc,stroke-width:2px
+  classDef partial fill:#3b1d5b,stroke:#e879f9,color:#f8fafc,stroke-width:2px
+  classDef development fill:#312e81,stroke:#a78bfa,color:#f8fafc,stroke-width:2px
+  classDef planned fill:#111827,stroke:#64748b,color:#cbd5e1,stroke-width:2px,stroke-dasharray:6 4
+  class Host,Tail,WSL,Docker,Home,Proxy,Metrics,Uptime,HA,Media,VPN,Vault,Git,Docs working
+  class Admin,AIUI,Visual,Logs partial
+  class Core,Awareness development
+  class Retrieval,Agents,Approval planned
