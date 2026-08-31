@@ -10,6 +10,10 @@ Nova is my private, self-hosted personal operations platform. I use it to explor
 
 This repository is a security-sanitized portfolio and case study. It explains the architecture and the work without publishing the private source repository, live configuration, credentials, addresses, hostnames, service data, or personal information.
 
+## Related public prototype
+
+I built the separate [Nova Support Knowledge Assistant](https://github.com/Ghostixs/nova-support-assistant) to test cited support retrieval, confidence-based routing, evaluation, and human handoff with synthetic content. The [live browser demo](https://ghostixs.github.io/nova-support-assistant/) is implemented and publicly inspectable. It is not connected to the private Nova runtime and is not described as a production AI or RAG system.
+
 ## Project status
 
 Last runtime inspection: **August 30, 2026**
@@ -23,8 +27,9 @@ Last runtime inspection: **August 30, 2026**
 | Media workflow | **Working** | Request, management, download, VPN, subtitle, and playback services were running. Media data and private paths are not published. |
 | Backup and recovery | **Partial** | Recovery artifacts and documented repair procedures exist. Off-host coverage and isolated restore testing are not complete for every service. |
 | AI experimentation | **Partial** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. |
+| Public support-knowledge prototype | **Working, separate public project** | Browser demo, citations, policy handoff, and a 28-question synthetic regression set are implemented outside the private runtime. |
 | Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. |
-| Advanced AI operations | **Planned** | Retrieval evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. |
+| Advanced AI operations | **Planned** | RAG retrieval evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. |
 
 ## Why I built Nova
 
@@ -103,7 +108,7 @@ Planned AI workflows will be evaluated for answer quality, failure behavior, per
 ## Roadmap
 
 - **Current foundation:** stability, monitoring, documentation, backups, private access, and operational dashboards
-- **Near term:** reduce source drift, improve restore testing, strengthen authentication and secret handling, and prototype a sanitized support-knowledge assistant with evaluation and handoff criteria
+- **Near term:** reduce source drift, improve restore testing, strengthen authentication and secret handling, and expand the separate support-knowledge prototype with broader evaluation and content-governance criteria
 - **Later:** RAG-backed memory, embedding and retrieval evaluation, agent routing, MCP-enabled tools, human-approved actions, model selection, voice interfaces, and hardware experimentation
 
 Read the complete [Roadmap](docs/roadmap.md).

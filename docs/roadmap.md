@@ -21,9 +21,10 @@ This roadmap describes direction, not promised delivery dates. A roadmap item re
 - Strengthen authentication, secret handling, and privileged integration boundaries
 - Review mutable image tags and improve version reproducibility
 - Validate monitoring targets, dashboards, retention, and notification paths
-- Build a sanitized support-knowledge assistant prototype
-- Define evaluation criteria for answer quality, uncertainty, permissions, and human handoff
-- Document what the assistant must refuse or escalate
+- Maintain the separate public support-knowledge prototype and its reproducible evaluation
+- Expand the synthetic test set with paraphrases, ambiguity, content conflicts, and adversarial cases
+- Define permission-safe content ownership, review, expiration, and feedback workflows for a possible future pilot
+- Keep refusal, escalation, and human-approval boundaries explicit
 
 ## Later
 
@@ -65,4 +66,4 @@ Future actions should not move from concept to implementation until these questi
 - Finished Discord AI assistant
 - Voice-first assistant
 - Robotics or wearable integration
-- Interview-ready support chatbot
+- Production support assistant integrated with the private Nova runtime
