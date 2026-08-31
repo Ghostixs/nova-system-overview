@@ -21,10 +21,6 @@ This roadmap describes direction, not promised delivery dates. A roadmap item re
 - Strengthen authentication, secret handling, and privileged integration boundaries
 - Review mutable image tags and improve version reproducibility
 - Validate monitoring targets, dashboards, retention, and notification paths
-- Maintain the separate public support-knowledge prototype and its reproducible evaluation
-- Expand the synthetic test set with paraphrases, ambiguity, content conflicts, and adversarial cases
-- Define permission-safe content ownership, review, expiration, and feedback workflows for a possible future pilot
-- Keep refusal, escalation, and human-approval boundaries explicit
 
 ## Later
 
