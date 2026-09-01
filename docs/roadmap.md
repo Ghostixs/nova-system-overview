@@ -2,9 +2,14 @@
 
 This roadmap describes direction, not promised delivery dates. A roadmap item remains planned until current implementation evidence proves otherwise.
 
+<p align="center">
+  <img src="../assets/branding/nova-builder-roadmap.webp" alt="Illustrated Nova builder beside a Building Nova neon sign" width="720">
+</p>
+
 ## Current foundation
 
 - Maintain infrastructure stability across Docker and WSL2
+- Maintain the production-validated post-logon convergence verifier and its frozen V1 safety boundary
 - Continue service recovery and configuration reconciliation
 - Expand useful metrics, logs, uptime checks, and operational dashboards
 - Reduce drift between runtime, source control, and documentation

@@ -1,0 +1,35 @@
+%%{init: {"theme":"base","flowchart":{"htmlLabels":false,"curve":"basis","nodeSpacing":30,"rankSpacing":40},"themeVariables":{"background":"#070b19","primaryColor":"#172554","primaryTextColor":"#f8fafc","primaryBorderColor":"#22d3ee","lineColor":"#94a3b8","secondaryColor":"#2e1065","tertiaryColor":"#111827","clusterBkg":"#0f172a","clusterBorder":"#6d28d9","fontFamily":"Segoe UI, Inter, Arial, sans-serif","fontSize":"16px"}}}%%
+flowchart LR
+  subgraph Ops["Core Operations"]
+    direction TB
+    HA["Home Assistant<br/>Connects smart-home devices and automations"]
+    Media["Media Workflow<br/>Coordinates requests, libraries, subtitles, and playback"]
+    VPN["VPN-Routed Downloads<br/>Keeps download traffic inside a fail-closed VPN path"]
+    Vault["Vaultwarden<br/>Stores encrypted credentials under self-hosted control"]
+    HA ~~~ Media ~~~ VPN ~~~ Vault
+  end
+
+  subgraph Observe["System Health & Observability"]
+    direction TB
+    Metrics["Prometheus / Node Exporter<br/>Collects host and service health metrics"]
+    Visual["Grafana<br/>Turns Nova telemetry into dashboards"]
+    Logs["Loki / Promtail<br/>Collects and stores operational logs"]
+    Uptime["Uptime Kuma<br/>Checks service reachability"]
+    Metrics --> Visual
+    Logs --> Visual
+    Visual ~~~ Uptime
+  end
+
+  subgraph Access["Dashboards & Administration"]
+    direction TB
+    Home["Homepage<br/>Provides a central service dashboard"]
+    Proxy["Caddy<br/>Routes secure traffic to Nova services"]
+    Admin["Portainer<br/>Provides visual container administration"]
+    AIUI["Open WebUI<br/>Provides an interface for AI experimentation"]
+    Home ~~~ Proxy ~~~ Admin ~~~ AIUI
+  end
+
+  classDef working fill:#172554,stroke:#22d3ee,color:#f8fafc,stroke-width:2px
+  classDef partial fill:#3b1d5b,stroke:#e879f9,color:#f8fafc,stroke-width:2px
+  class HA,Media,VPN,Vault,Metrics,Uptime,Home,Proxy working
+  class Visual,Logs,Admin,AIUI partial

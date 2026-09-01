@@ -2,6 +2,10 @@
 
 This history highlights verified technical and operational milestones. It is not a claim that Nova has progressed in a straight line. Several milestones exposed drift or recovery gaps that became the next area of work.
 
+<p align="center">
+  <img src="../assets/branding/nova-builder-engineering.webp" alt="Illustrated Nova builder actively coding in a purple-lit workspace" width="340">
+</p>
+
 ## July 2026: Native concepts and early prototypes
 
 - Defined a model-independent direction for Nova Core.
@@ -43,6 +47,18 @@ Read the complete public-safe [case study](case-study-qbittorrent-recovery.md).
 - Confirmed that the public portfolio source was written in a clean location with new Git history.
 - Ran secret scans against private source roots, private Git history, technical documentation, and all public staging files.
 - Kept runtime data and backups out of public staging after the scanner confirmed that those private areas contain sensitive material.
+
+## August 31, 2026: Production-validated boot convergence
+
+- Built a thin Windows AtLogOn launcher that delegates verification to WSL2.
+- Added a 22-container identity manifest and passive Linux verifier.
+- Validated syntax, prohibited-command boundaries, exit-code propagation, and mutation-free execution.
+- Used repeated real cold boots to expose independent Docker, proxy-boundary, telemetry-scrape, and VPN-health timing races.
+- Replaced fixed assumptions with bounded polling: 150 seconds for Docker, 90 seconds for VPN convergence, 60 seconds for authoritative telemetry, and 300 seconds globally.
+- Preserved fail-closed VPN behavior while allowing safe transient convergence.
+- Completed final cold-boot validation with exit 0 and no unexpected container recreation.
+
+Read the [Boot Recovery V1 case study](case-study-boot-recovery.md).
 
 ## What the history demonstrates
 

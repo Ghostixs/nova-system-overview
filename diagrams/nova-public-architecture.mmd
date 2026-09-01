@@ -1,75 +1,56 @@
-%%{init: {"theme":"base","themeVariables":{"background":"#070b19","primaryColor":"#172554","primaryTextColor":"#f8fafc","primaryBorderColor":"#22d3ee","lineColor":"#94a3b8","secondaryColor":"#2e1065","tertiaryColor":"#111827","clusterBkg":"#111827","clusterBorder":"#6d28d9","edgeLabelBackground":"#111827","fontFamily":"Segoe UI, Inter, Arial, sans-serif"}}}%%
+%%{init: {"theme":"base","flowchart":{"htmlLabels":false,"curve":"basis","nodeSpacing":34,"rankSpacing":46},"themeVariables":{"background":"#070b19","primaryColor":"#172554","primaryTextColor":"#f8fafc","primaryBorderColor":"#22d3ee","lineColor":"#94a3b8","secondaryColor":"#2e1065","tertiaryColor":"#111827","clusterBkg":"#0f172a","clusterBorder":"#6d28d9","edgeLabelBackground":"#111827","fontFamily":"Segoe UI, Inter, Arial, sans-serif","fontSize":"16px"}}}%%
 flowchart TB
-  User["User"] --> Host["Windows 11 Host"]
-  Host --> Tail["Tailscale<br/>Host-level private access<br/><b>Working</b>"]
-  Host --> WSL["WSL2 Ubuntu Environment<br/><b>Working</b>"]
+  User["Operator<br/>Uses Nova through trusted interfaces"]
+  Host["Windows Host<br/>Runs the desktop, WSL2, and native integrations"]
+  Tail["Tailscale<br/>Provides private access between trusted devices"]
+  WSL["WSL2 Ubuntu Environment<br/>Hosts Nova's Linux runtime and engineering workspace"]
+  Docker["Container Platform / Docker Service Layer<br/>Runs and isolates Nova's self-hosted workloads"]
 
-  subgraph Runtime["Docker Service Layer"]
-    direction TB
-    Docker["Docker Engine<br/><b>Working</b>"]
-
-    subgraph Access["Access and Interfaces"]
-      direction LR
-      Home["Homepage"]
-      Proxy["Caddy"]
-      Admin["Portainer"]
-      AIUI["Open WebUI<br/><b>Partial</b>"]
-    end
-
-    subgraph Observe["Observability"]
-      direction LR
-      Metrics["Prometheus<br/>Node Exporter"]
-      Visual["Grafana"]
-      Logs["Loki<br/>Promtail"]
-      Uptime["Uptime Kuma"]
-    end
-
-    subgraph Operations["Operational Services"]
-      direction LR
-      HA["Home Assistant"]
-      Media["Media workflow"]
-      VPN["VPN-routed download"]
-      Vault["Vaultwarden"]
-    end
-
-    Docker --> Access
-    Docker --> Observe
-    Docker --> Operations
-    Metrics --> Visual
-    Logs --> Visual
-  end
-
+  User --> Host
+  Host --> Tail
+  Host --> WSL
   WSL --> Docker
 
-  subgraph Knowledge["Engineering Knowledge"]
-    direction LR
-    Git["Private Git source"]
-    Docs["Technical docs<br/>runbooks and recovery"]
-  end
+  CoreOps["Core Operations<br/>Runs home automation, media, VPN, and credential workflows"]
+  Observe["System Health & Observability<br/>Collects metrics, logs, and availability evidence"]
+  Access["Dashboards & Administration<br/>Provides navigation, secure routing, and management"]
+  Knowledge["Engineering Source & Recovery Knowledge<br/>Preserves source, decisions, runbooks, and recovery evidence"]
 
+  Docker --> CoreOps
+  Docker --> Observe
+  Docker --> Access
   WSL --> Knowledge
 
-  subgraph Roadmap["AI and Automation Roadmap"]
-    direction TB
-    Core["Nova Core<br/><b>In Development</b>"]
-    Awareness["Nova Awareness<br/><b>In Development</b>"]
-    Retrieval["RAG and retrieval evaluation<br/><b>Planned</b>"]
-    Agents["Agent routing and MCP tools<br/><b>Planned</b>"]
-    Approval["Human-approved actions<br/><b>Planned</b>"]
+  subgraph Roadmap["Nova Intelligence Roadmap"]
+    direction LR
+    Core["Nova Core<br/>Builds a model-independent knowledge foundation"]
+    Awareness["Nova Awareness<br/>Builds context about system state and activity"]
+    Retrieval["RAG & Retrieval<br/>Finds relevant knowledge before Nova answers"]
+    Agents["Agent Routing + MCP<br/>Chooses the right models and tools for a task"]
+    Approval["Human-Approved Actions<br/>Requires approval before sensitive changes"]
     Core -.-> Retrieval
     Awareness -.-> Agents
     Retrieval -.-> Agents
     Agents -.-> Approval
   end
 
-  AIUI -. "experimentation only" .-> Roadmap
+  Access -. "AI experimentation" .-> Roadmap
   Knowledge -. "evidence and design" .-> Roadmap
+
+  subgraph Legend["Status"]
+    direction LR
+    LWork["Working"]
+    LPartial["Partial"]
+    LDev["In Development"]
+    LPlan["Planned"]
+  end
 
   classDef working fill:#172554,stroke:#22d3ee,color:#f8fafc,stroke-width:2px
   classDef partial fill:#3b1d5b,stroke:#e879f9,color:#f8fafc,stroke-width:2px
   classDef development fill:#312e81,stroke:#a78bfa,color:#f8fafc,stroke-width:2px
   classDef planned fill:#111827,stroke:#64748b,color:#cbd5e1,stroke-width:2px,stroke-dasharray:6 4
-  class Host,Tail,WSL,Docker,Home,Proxy,Metrics,Uptime,HA,Media,VPN,Vault,Git,Docs working
-  class Admin,AIUI,Visual,Logs partial
-  class Core,Awareness development
-  class Retrieval,Agents,Approval planned
+
+  class Host,Tail,WSL,Docker,CoreOps,Observe,Access,Knowledge,LWork working
+  class LPartial partial
+  class Core,Awareness,LDev development
+  class Retrieval,Agents,Approval,LPlan planned

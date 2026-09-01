@@ -32,6 +32,22 @@ Secret migrations, version updates, and access-control changes are worthwhile, b
 
 A directory named `memory`, a vector database, or a working chat interface does not prove RAG, dependable retrieval, or an agent system. Honest status language makes the roadmap more credible and makes evaluation easier.
 
+## Startup is convergence, not a timestamp
+
+A user logon, a running WSL2 environment, and a ready Docker engine are separate events. Real cold boots exposed multiple independent races that warm tests did not. Bounded polling with a global deadline produced better evidence than adding a larger fixed delay.
+
+## Preserve stronger safety invariants while waiting
+
+A transient unhealthy VPN signal was not automatically safe or unsafe. The decisive invariant was whether the firewall remained fail-closed while container identity and restart count stayed stable. Readiness allowances should never weaken the control they are waiting to verify.
+
+## Cross-platform loopback assumptions need testing
+
+Linux loopback inside WSL2 did not represent Docker Desktop's Windows-host publication. The correct probe resolved the host boundary dynamically and sent the same hostname/SNI request a client depends on. Network namespaces should be treated as architecture, not an implementation detail.
+
+## Readiness has layers
+
+Prometheus server readiness did not prove that exporters had completed successful scrapes. Separating server readiness from target convergence prevented a false production failure and made the final evidence more precise.
+
 ## Documentation is part of user enablement
 
 The best runbook reduces the amount of private context someone needs before acting safely. Writing clear evidence, limitations, acceptance checks, and rollback steps is the technical equivalent of making the system easier to support.
