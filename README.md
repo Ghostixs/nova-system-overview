@@ -18,18 +18,20 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 Last runtime inspection: **August 31, 2026**
 
-| Area | Status | What the evidence supports |
-|---|---|---|
-| Docker and WSL2 foundation | **Working** | The current environment runs under WSL2 with a 22-container persistent service layer. |
-| Boot recovery | **Validated** | A Windows AtLogOn task launches a passive WSL2 verifier with bounded dependency convergence. Repeated real cold boots ended healthy with zero unexpected container recreation. |
-| Service access and navigation | **Working** | Homepage and Caddy passed direct and routed availability checks across the Windows/WSL boundary. |
-| Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes; Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were also running. Dashboard, alert, and retention coverage still varies. |
-| Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. |
-| Media workflow | **Working** | Request, management, download, VPN, subtitle, and playback services were running. Media data and private paths are not published. |
-| Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. |
-| AI experimentation | **Experimental** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. |
-| Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. |
-| Advanced AI operations | **Planned** | RAG evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. |
+The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
+
+| Area | Status | What the evidence supports | Plain-language summary |
+|---|---|---|---|
+| Docker and WSL2 foundation | **Working** | The current WSL2 environment runs a persistent 22-container service layer. | Nova's core services are running together on a stable local foundation. |
+| Boot recovery | **Validated** | A Windows AtLogOn task launches a passive WSL2 verifier with bounded convergence. Repeated cold boots ended healthy with no unexpected container recreation. | After a restart, Nova waits for core services to come online and verifies that they returned safely. |
+| Service access and navigation | **Working** | Homepage and Caddy passed direct and routed availability checks across the Windows/WSL boundary. | The main dashboard and service routes are reachable from the host environment. |
+| Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes. Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were running; dashboard, alert, and retention coverage still varies. | Nova can monitor the health of its main systems, though monitoring coverage is still growing. |
+| Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. | Home-automation services are available, while private household details remain unpublished. |
+| Media workflow | **Working** | Request, management, download, VPN, subtitle, and playback services were running. Media data and private paths are not published. | The end-to-end media toolchain is operating, but no personal library or download details are exposed. |
+| Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. | Nova has documented recovery options, but not every service yet has complete off-site backup and restore proof. |
+| AI experimentation | **Experimental** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. | The current AI interface can be tested, but advanced Nova intelligence is not a production capability yet. |
+| Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. | Nova's own software is being built but is not running as a live service yet. |
+| Advanced AI operations | **Planned** | RAG evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. | More advanced AI and tool-use capabilities are on the roadmap and have not been built yet. |
 
 ## Why I built Nova
 
@@ -72,12 +74,9 @@ Nova's boot path is documented separately because startup convergence is easier 
 
 ## About the Builder
 
-<img src="assets/portraits/jacque-professional-headshot.png" alt="Jacque, builder and operator of Nova" width="132" align="left">
+**Designed, built, operated, tested, and documented by Jacque.**
 
-**Designed, built, operated, tested, and documented by Jacque.**<br>
 Nova is an ongoing systems and platform engineering project focused on reliability, observability, automation, and recoverable infrastructure.
-
-<br clear="left">
 
 ## Technology stack
 
