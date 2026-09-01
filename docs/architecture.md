@@ -1,5 +1,7 @@
 # Architecture
 
+[Back to project overview](../README.md)
+
 ## Purpose
 
 Nova is a private personal operations environment. Its mature layer is the self-hosted infrastructure. Native AI memory and action systems remain prototypes or roadmap work.
@@ -29,13 +31,33 @@ When two sources disagree, the discrepancy is documented as drift. A plan is nev
 | **In Development** | Source or a prototype exists, but it is not a dependable deployed capability. |
 | **Planned** | An intended future capability with no current implementation claim. |
 
+## Diagrams
+
+### High-level architecture
+
+<p align="center">
+  <img src="../diagrams/nova-public-architecture.svg" alt="Sanitized Nova high-level architecture" width="100%">
+</p>
+
+[View Mermaid source](../diagrams/nova-public-architecture.mmd)
+
+### Runtime service map
+
+<p align="center">
+  <img src="../diagrams/nova-runtime-service-map.svg" alt="Sanitized Nova runtime service map" width="620">
+</p>
+
+[View Mermaid source](../diagrams/nova-runtime-service-map.mmd)
+
+### Boot Recovery sequence
+
+<p align="center">
+  <img src="../diagrams/nova-boot-recovery.svg" alt="Sanitized Nova Boot Recovery sequence" width="560">
+</p>
+
+[View Mermaid source](../diagrams/nova-boot-recovery.mmd) · [Read the Boot Recovery case study](case-study-boot-recovery.md)
+
 ## High-level structure
-
-The main rendered diagram is available at [nova-public-architecture.svg](../diagrams/nova-public-architecture.svg), with Mermaid source at [nova-public-architecture.mmd](../diagrams/nova-public-architecture.mmd).
-
-The boot sequence is intentionally separate: [nova-boot-recovery.svg](../diagrams/nova-boot-recovery.svg), with source at [nova-boot-recovery.mmd](../diagrams/nova-boot-recovery.mmd).
-
-Individual runtime components are separated for readability in [nova-runtime-service-map.svg](../diagrams/nova-runtime-service-map.svg), with source at [nova-runtime-service-map.mmd](../diagrams/nova-runtime-service-map.mmd).
 
 At a high level:
 

@@ -1,5 +1,7 @@
 # Case Study: Nova Boot Recovery V1
 
+[Back to project overview](../README.md) · [View all architecture diagrams](architecture.md#diagrams)
+
 ## 1. Operational Problem
 
 Nova spans Windows, WSL2, systemd, Docker Desktop, a private VPN gateway, application containers, and host-level telemetry. Those layers do not become ready at the same time.
@@ -33,7 +35,11 @@ The PowerShell layer only wakes the selected WSL2 environment, starts the Linux 
 
 The Linux verifier checks a manifest of **22 expected persistent containers** and selected service behaviors. It writes a timestamped report and keeps a pointer to the newest result.
 
-![Sanitized Boot Recovery sequence](../diagrams/nova-boot-recovery.svg)
+<p align="center">
+  <img src="../diagrams/nova-boot-recovery.svg" alt="Sanitized Nova Boot Recovery sequence" width="560">
+</p>
+
+[View Mermaid source](../diagrams/nova-boot-recovery.mmd)
 
 ## 3. Reliability & Safety Constraints
 

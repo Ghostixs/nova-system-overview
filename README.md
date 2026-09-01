@@ -65,12 +65,12 @@ The project is also a practical response to common operational problems:
 ## Architecture
 
 <p align="center">
-  <img src="diagrams/nova-public-architecture.svg" alt="Sanitized Nova architecture diagram" width="980">
+  <img src="diagrams/nova-public-architecture.svg" alt="Sanitized Nova architecture diagram" width="860">
 </p>
 
-The diagram shows trust boundaries and service groups rather than live network details. Open the [full-size diagram](diagrams/nova-public-architecture.svg), or see [Architecture](docs/architecture.md) for the evidence model and design decisions.
+The diagram shows trust boundaries and service groups rather than live network details. [View the readable architecture diagrams](docs/architecture.md#diagrams) or [inspect the Mermaid source](diagrams/nova-public-architecture.mmd).
 
-Nova's boot path is documented separately because startup convergence is easier to understand as a sequence. Open the [Boot Recovery sequence diagram](diagrams/nova-boot-recovery.svg), or read the [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) for the engineering constraints, failure modes, and cold-boot validation.
+Nova's boot path is documented separately because startup convergence is easier to understand as a sequence. [View the readable Boot Recovery sequence](docs/case-study-boot-recovery.md#2-architecture) or [inspect its Mermaid source](diagrams/nova-boot-recovery.mmd).
 
 ## About the Builder
 
