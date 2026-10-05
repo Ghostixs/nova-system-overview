@@ -59,3 +59,15 @@ The best runbook reduces the amount of private context someone needs before acti
 - Separate persistent data, configuration, secrets, and logs consistently from the beginning.
 - Add fewer services at a time and close the documentation loop before expanding.
 - Treat AI evaluation and approval design as foundational requirements, not final polish.
+
+## Lessons from the Download Security Gate
+
+- **Acknowledgement is not completion.** A successful move API call and full-sized destination can coexist with an unfinished move. Verify terminal state and final identity.
+- **Visibility is authority.** Application import settings help, but a consumer that can read raw bytes can bypass a validation boundary. Separate staging, release and library access.
+- **Retries belong in the safety model.** Preserve exhausted attempts. Prove the runtime healthy before a separately admitted fresh attempt; do not erase history to get a green result.
+- **Dependencies are part of trust.** Runtime libraries and scanner definitions can drift independently of source. Fail closed, then requalify the actual supported identity.
+- **Test the production boundary.** Windows, WSL and Linux have different filesystem and process behavior. Disposable source tests and actual topology evidence answer different questions.
+- **Synthetic evidence has a limit.** It is useful for denial/fault tests, but cannot authorize real production PASSED or release.
+- **Recovery needs acceptance criteria.** A normal restart, replay, interrupted move and power loss are distinct cases. Claim only the cases tested.
+
+These lessons are illustrated in the [Gate case study](case-study-download-security-gate.md).

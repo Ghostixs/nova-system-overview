@@ -1,0 +1,33 @@
+%%{init: {"theme":"base","sequence":{"useMaxWidth":false,"wrap":true,"diagramMarginX":18,"diagramMarginY":18,"actorMargin":35,"width":125,"messageMargin":28},"themeVariables":{"background":"#070b19","primaryColor":"#172554","primaryTextColor":"#f8fafc","primaryBorderColor":"#22d3ee","lineColor":"#94a3b8","actorBkg":"#172554","actorBorder":"#22d3ee","actorTextColor":"#f8fafc","actorLineColor":"#64748b","signalColor":"#cbd5e1","signalTextColor":"#f8fafc","labelBoxBkgColor":"#2e1065","labelTextColor":"#f8fafc","loopTextColor":"#f8fafc","noteBkgColor":"#2e1065","noteTextColor":"#f8fafc","noteBorderColor":"#a78bfa","fontFamily":"Segoe UI, Arial, sans-serif","fontSize":"16px"}}}%%
+sequenceDiagram
+  participant O as Owner / request
+  participant Q as qBittorrent + VPN
+  participant G as Staging + Gate
+  participant V as Validators
+  participant R as Release boundary
+  participant A as Sonarr + library
+  Note over O,A: Offline path qualified through RELEASED. Live acquisition and import remain unqualified.
+  O-->>Q: Future: separately approved source and item
+  Q->>G: Complete admitted content in isolated staging
+  Q->>G: Completion event
+  G->>G: Inventory and control producer writes
+  G->>V: Filename/type, libmagic, FFprobe, ClamAV, Defender
+  alt Incomplete, unsupported or adverse evidence
+    V-->>G: HOLD / REJECT
+    Note over G,A: No release or consumer access
+  else All required live evidence accepted
+    V-->>G: Same package / identity / attempt
+    G->>G: Final identity check and durable PASSED
+    Note over G,R: PASSED alone does not move content
+    O->>G: Separate authorized release control
+    Note over G,V: Durable RELEASE_PENDING
+    G->>Q: Request supported move
+    Q->>R: Move content
+    Note over Q,R: While moving: stay RELEASE_PENDING, even with full-sized destination
+    G->>Q: Verify final client state and location
+    G->>R: Verify final file set and content identity
+    G->>G: Durable RELEASED
+    Note over R,A: Future: qualify exact-package read-only handoff
+    R-->>A: Separately authorized import after RELEASED
+    A-->>O: Future pilot: library import and Jellyfin discovery
+  end

@@ -71,3 +71,18 @@ Nova's progress is less about adding the largest possible number of applications
 - Record limitations
 - Keep private information private
 - Revisit the source of truth when evidence changes
+
+## September–October 2026: Download Security Gate
+
+The media pipeline evolved from shared filesystem access into distinct staging, validation, release and import boundaries:
+
+1. Durable inventory/ledger and current-versus-historical identity handling established the evidence contract.
+2. Filename/type and sandboxed media validation were joined by real ClamAV and trusted Windows Defender evidence.
+3. Release enforcement separated validation success from download-client movement and final consumer access.
+4. Isolated production staging and a separate release destination removed raw/moving content from media-manager visibility.
+5. Production deployment added bounded completion ingress and persistent recovery. An initial attempt exhausted its retry budget and remained preserved.
+6. On October 4, scanner preflight and a fresh offline package completed real PASSED → RELEASED on attempt one. Normal restart/replay and bounded VPN failure checks passed. Retained suites: 471 core + 8 deployment tests, zero skips.
+
+The campaign ended empty of test payloads, without Sonarr import or Internet acquisition. Exact live admission, the 16 MiB parser contract and the import handoff remain the next gates; the controlled Internet pilot is not complete.
+
+Read [Building a Fail-Closed Media Acquisition Pipeline](case-study-download-security-gate.md). Earlier milestones above retain their original evidence dates.

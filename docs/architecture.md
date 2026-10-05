@@ -20,6 +20,8 @@ Claims in this repository use the following order of authority:
 
 When two sources disagree, the discrepancy is documented as drift. A plan is never promoted to a working capability because a directory or design document exists.
 
+The October 4 Gate milestone is deployed and offline-qualified through RELEASED. Internet acquisition and import remain unqualified. Other service descriptions retain the dates on [Current state](current-state.md).
+
 ## Status language
 
 | Status | Meaning |
@@ -40,6 +42,12 @@ When two sources disagree, the discrepancy is documented as drift. A plan is nev
 </p>
 
 [View Mermaid source](../diagrams/nova-public-architecture.mmd)
+
+### Gate validation and release sequence
+
+![Gate validation and release sequence](../diagrams/nova-gate-sequence.svg)
+
+[Mermaid source](../diagrams/nova-gate-sequence.mmd) · [Engineering case study](case-study-download-security-gate.md)
 
 ### Runtime service map
 
@@ -66,13 +74,14 @@ At a high level:
 3. Docker runs grouped services for core operations, system health, administration, home automation, media operations, credentials, and AI experimentation.
 4. Git and technical documentation preserve source history, decisions, verification evidence, and recovery knowledge.
 5. A passive Boot Recovery verifier checks bounded dependency convergence after logon without recreating containers.
-6. Nova-native memory and agent capabilities remain outside the working service layer until they are implemented and evaluated.
+6. A bounded WSL-local Gate coordinator uses persistent state, isolated staging and a separate release boundary; media managers cannot see moving content.
+7. Nova-native memory and agent capabilities remain outside the working service layer until they are implemented and evaluated.
 
 ## Current service groups
 
 ### Core Operations
 
-Home Assistant connects smart-home devices and automations. Vaultwarden stores encrypted credentials under self-hosted control. The media workflow coordinates requests, libraries, subtitles, and playback. The VPN-routed download path keeps download traffic behind a fail-closed network boundary.
+Home Assistant connects smart-home devices and automations. Vaultwarden stores encrypted credentials under self-hosted control. Media services provide requests, libraries, subtitles and playback. Internet acquisition is disabled while exact Gate admission and the post-release import handoff are qualified. The deployed offline chain separates staging, validation and release; the VPN boundary passed the bounded failure test described in the case study.
 
 ### System Health & Observability
 
@@ -113,6 +122,10 @@ Read [Case Study: Nova Boot Recovery V1](case-study-boot-recovery.md).
 - **Persistent service data:** databases, logs, credentials, and personal content
 - **Host networking:** private routes, identities, and access policy
 - **AI experimentation:** limited to explicit experiments, with production actions still planned
+
+## Media trust transitions
+
+Validation is not release, and release is not import. The intended full workflow appears in the overview diagram; dashed steps remain unqualified. The deployed offline portion ends at RELEASED. Only a separately qualified, exact-package consumer handoff may follow it. Broad shared filesystem access or a remote path mapping cannot stand in for that boundary.
 
 ## Architecture decisions that matter
 

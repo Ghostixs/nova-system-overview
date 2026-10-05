@@ -16,22 +16,33 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 ## Project status
 
-Last runtime inspection: **August 31, 2026**
+Latest Gate evidence review: **October 4, 2026**. Platform baseline reconciled September 24; unrelated service details retain their August 31 inspection scope.
 
 The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
 
 | Area | Status | What the evidence supports | Plain-language summary |
 |---|---|---|---|
-| Docker and WSL2 foundation | **Working** | The current WSL2 environment runs a persistent 22-container service layer. | Nova's core services are running together on a stable local foundation. |
+| Docker and WSL2 foundation | **Working** | The reconciled recovery baseline covers 22 expected services; experimental services are tracked separately. | Nova's core services are running together on a stable local foundation. |
 | Boot recovery | **Validated** | A Windows AtLogOn task launches a passive WSL2 verifier with bounded convergence. Repeated cold boots ended healthy with no unexpected container recreation. | After a restart, Nova waits for core services to come online and verifies that they returned safely. |
 | Service access and navigation | **Working** | Homepage and Caddy passed direct and routed availability checks across the Windows/WSL boundary. | The main dashboard and service routes are reachable from the host environment. |
 | Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes. Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were running; dashboard, alert, and retention coverage still varies. | Nova can monitor the health of its main systems, though monitoring coverage is still growing. |
 | Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. | Home-automation services are available, while private household details remain unpublished. |
-| Media workflow | **Working** | Request, management, download, VPN, subtitle, and playback services were running. Media data and private paths are not published. | The end-to-end media toolchain is operating, but no personal library or download details are exposed. |
+| Media workflow | **Deployed Gate; offline release qualified** | Real validation and download-client move reached RELEASED; 471 core and 8 deployment tests passed. | Internet acquisition remains disabled. Exact admission and Sonarr import still need qualification. |
 | Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. | Nova has documented recovery options, but not every service yet has complete off-site backup and restore proof. |
 | AI experimentation | **Experimental** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. | The current AI interface can be tested, but advanced Nova intelligence is not a production capability yet. |
 | Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. | Nova's own software is being built but is not running as a live service yet. |
 | Advanced AI operations | **Planned** | RAG evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. | More advanced AI and tool-use capabilities are on the roadmap and have not been built yet. |
+
+## Recent engineering milestone: Download Security Gate
+
+- Isolated staging keeps untrusted content away from media consumers.
+- Real filename/type, libmagic, FFprobe, ClamAV and Defender evidence bind to the same file identity.
+- Validation, release and import are separate decisions: **PASSED ≠ RELEASED ≠ IMPORTED**.
+- The download client moves content; the Gate verifies completion before release.
+- A deployed offline fixture reached RELEASED, with normal restart/replay checks passing. **471 core + 8 deployment tests passed, zero skips.**
+- Internet acquisition remains disabled. Fixture-only admission, an unresolved **16 MiB** probe/admission constraint and the Sonarr handoff prevent immediate pilot readiness.
+
+Read [Building a Fail-Closed Media Acquisition Pipeline](docs/case-study-download-security-gate.md).
 
 ## Why I built Nova
 
@@ -47,7 +58,7 @@ The project is also a practical response to common operational problems:
 - Automation ideas that need explicit safety and approval boundaries
 - AI concepts that are easy to describe but much harder to validate responsibly
 
-## Verified current capabilities
+## Verified capabilities and dated foundation
 
 - Docker-based self-hosted environment under Linux and WSL2
 - Private host-level networking through Tailscale
@@ -56,7 +67,7 @@ The project is also a practical response to common operational problems:
 - Grafana visualization, Loki logs, Promtail collection, Node Exporter, and Uptime Kuma
 - Production-validated, fail-closed post-logon convergence verification
 - Home Assistant for home-automation experimentation
-- Jellyfin-centered media workflow with request, library, indexer, subtitle, download, and VPN components
+- Jellyfin-centered services with an offline-qualified Download Security Gate; Internet acquisition remains disabled
 - Vaultwarden for private credential management
 - Open WebUI as an AI experimentation interface
 - Git-based source control for engineering material
@@ -76,7 +87,7 @@ Nova's boot path is documented separately because startup convergence is easier 
 
 **Designed, built, operated, tested, and documented by Jacque.**
 
-Nova is an ongoing systems and platform engineering project focused on reliability, observability, automation, and recoverable infrastructure.
+Nova is my personal systems engineering project focused on reliability, security boundaries, observability and recoverable infrastructure. It demonstrates hands-on learning and evidence-led implementation, rather than a claim of professional security credentials.
 
 ## Technology stack
 
@@ -89,10 +100,13 @@ Nova is an ongoing systems and platform engineering project focused on reliabili
 | Interfaces | Homepage, Portainer, Open WebUI |
 | Home automation | Home Assistant |
 | Media operations | Jellyfin, Jellyseerr, Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent, Gluetun, Recyclarr, FlareSolverr |
+| Download validation | Python, SQLite, Bubblewrap, libmagic, FFprobe, ClamAV, Microsoft Defender |
 | Documentation | Markdown, Mermaid, Obsidian, operational runbooks |
 | AI roadmap | Retrieval evaluation, human review, model routing concepts, MCP concepts |
 
 ## Selected engineering work
+
+- Built and qualified a durable validation/release boundary across Windows, WSL2 and Linux, including actual asynchronous moves and restart behavior
 
 - Diagnosed runtime/source drift and rebuilt an evidence-backed operating baseline
 - Recovered stateful services from stale cross-distro bind mounts without resetting application state
@@ -106,6 +120,8 @@ Nova is an ongoing systems and platform engineering project focused on reliabili
 
 ## Current limitations
 
+- Gate admission is still fixture-only and parser-limited; live pilot, Sonarr import and unattended acquisition are not qualified.
+
 - The private environment still has configuration and documentation drift to resolve.
 - Some services lack application-level health checks.
 - Observability targets are verified, but dashboard, alert, notification, and retention coverage is not uniform.
@@ -117,21 +133,24 @@ Nova is an ongoing systems and platform engineering project focused on reliabili
 
 ## Responsible AI and human control
 
+Current development uses owner-scoped, AI-assisted campaigns with acceptance evidence and explicit stop conditions. [Human-governed AI engineering](docs/operations-and-recovery.md#human-governed-ai-engineering) describes the method.
+
 Nova's AI roadmap starts with an operational rule: the model is not the source of truth. Evidence, source provenance, approval boundaries, and recoverability matter more than an impressive demo.
 
 Planned AI workflows will be evaluated for answer quality, failure behavior, permissions, logging, and human handoff before any action capability is considered. Actions that affect systems or data should remain explicit, reviewable, and reversible.
 
 ## Roadmap
 
-- **Current foundation:** stability, bounded boot verification, observability, documentation, backups, private access, and operational dashboards
-- **Near term:** curate source drift, improve restore testing, and strengthen authentication, secret handling, and image reproducibility
-- **Later:** RAG-backed memory, retrieval evaluation, agent routing, MCP-enabled tools, human-approved actions, model selection, voice interfaces, and hardware experimentation
+- **Completed:** service baseline, Gate source/runtime qualification, isolated production staging/release, bounded deployment and offline qualification through RELEASED.
+- **Current:** exact admission and post-RELEASED Sonarr import preparation, with acquisition disabled.
+- **Next:** explicitly authorized single-item request-to-Jellyfin pilot, then unattended acquisition qualification.
+- **Later:** broader recovery and observability coverage, supported content expansion, evaluated retrieval/MCP and home-automation capabilities.
 
 Read the complete [Roadmap](docs/roadmap.md).
 
 ## Documentation
 
-For a concise interview walkthrough: [Architecture](docs/architecture.md) -> [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) -> [Current state](docs/current-state.md) -> [Roadmap](docs/roadmap.md).
+For a concise interview walkthrough: [Gate case study](docs/case-study-download-security-gate.md) -> [Architecture](docs/architecture.md) -> [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) -> [Current state](docs/current-state.md) -> [Roadmap](docs/roadmap.md).
 
 | Document | Purpose |
 |---|---|
@@ -142,6 +161,7 @@ For a concise interview walkthrough: [Architecture](docs/architecture.md) -> [Bo
 | [Operations and recovery](docs/operations-and-recovery.md) | Change safety, backups, boot verification, and recovery method |
 | [Security and privacy](docs/security-and-privacy.md) | Publication boundaries and security posture |
 | [Lessons learned](docs/lessons-learned.md) | Practical technical and operational takeaways |
+| [Download Security Gate case study](docs/case-study-download-security-gate.md) | Isolation, state machines, real validation, asynchronous release and bounded recovery |
 | [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) | Bounded post-logon convergence across Windows, WSL2, Docker, VPN, proxy, and telemetry |
 | [qBittorrent recovery case study](docs/case-study-qbittorrent-recovery.md) | Evidence-led diagnosis and minimal repair |
 

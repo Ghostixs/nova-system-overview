@@ -1,12 +1,28 @@
 # Current State
 
-Last runtime inspection: **August 31, 2026**
+Latest Gate evidence: **October 4, 2026**. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
 
 ## How to read this page
 
 **Working** means current runtime evidence supports the component. It does not mean every feature or user journey was tested. When an application had no Docker health check or the complete data flow was not independently exercised, the limitation is stated directly.
 
 No private addresses, hostnames, paths, domains, identifiers, credentials, or application data are included.
+
+## Download Security Gate
+
+| Qualification level | Verified state |
+|---|---|
+| Source | 471/471 canonical core tests and 8/8 separate deployment tests, zero skips |
+| Runtime | Real filename/type, libmagic, FFprobe and both scanners completed for the same live offline package |
+| Production topology | Isolated staging, separate release destination and consumer exclusion; Sonarr import handling held |
+| Deployment | Bounded coordinator, durable ledger and completion ingress deployed |
+| Offline end-to-end | Qualified through RELEASED, including actual move observations and normal restart/replay |
+| Live pilot | NOT READY: fixture-only admission, 16 MiB parser bound and Sonarr handoff remain |
+| Normal automatic acquisition | Disabled and unqualified |
+
+The completed offline campaign left no test torrents or staging/release payloads. Sonarr imported nothing; existing media was unchanged. Current VPN egress and a bounded tunnel-down fail-closed check passed. An earlier exhausted attempt remains preserved.
+
+**PASSED ≠ RELEASED; RELEASED ≠ IMPORTED.** Files below the scanner ceiling are not automatically supported by the stricter parser/package contract. Large and unsupported content stays held. See the [Gate case study](case-study-download-security-gate.md).
 
 ## Platform and access
 
@@ -44,15 +60,16 @@ No private addresses, hostnames, paths, domains, identifiers, credentials, or ap
 
 ## Media operations
 
-| Component | Purpose | Status | Evidence used | Public-safe limitation |
-|---|---|---|---|---|
-| Jellyfin | Media playback | **Working** | Persistent state, media visibility, and health were recovered and verified | Media, users, libraries, and paths are private. |
-| Jellyseerr | Request workflow | **Working** | Application state and directory mappings were reconciled | Request history is private. |
-| Sonarr and Radarr | Library management | **Working** | Persistent state, canonical mounts, and application APIs were verified | Library and download details are private. |
-| Prowlarr and Bazarr | Indexer and subtitle coordination | **Working** | Persistent state and current dependency topology were verified | Provider configuration is private. |
-| qBittorrent | Download client | **Working** | Pinned image, persistent state, canonical mount, Web UI, namespace, and outbound VPN path verified | User data, paths, and network details are private. |
-| Gluetun | VPN gateway | **Working** | Native WireGuard, fail-closed firewall, tunnel health, namespace, and bounded boot convergence verified | Provider, endpoint, and credential details are private. |
-| Recyclarr and FlareSolverr | Supporting automation services | **Working** | Current runtime presence verified | Schedule and provider details are private; one deployment definition remains unresolved. |
+| Component | Current evidence | Limit |
+|---|---|---|
+| Jellyfin | Application-state restore previously verified; playback service retained | No new request-to-Jellyfin pilot completed |
+| Jellyseerr | Existing request interface | Acquisition is deliberately disabled |
+| Sonarr | Library-only visibility; Completed Download Handling OFF | Post-RELEASED read-only copy import unqualified |
+| Radarr | Library-only visibility; existing configuration preserved | Outside the first pilot |
+| Prowlarr / Arr indexers | Disabled at the final checkpoint | No source or grab authorized by documentation |
+| qBittorrent | Attached to isolated staging/release; real completion and move exercised | Fixture-only admission; no Internet media acquisition |
+| Gluetun | Tunnel routing, forwarding synchronization and bounded tunnel-down blocking verified | No claim covering every failure mode |
+| Other media support services | Earlier runtime evidence retained | No new feature qualification in this campaign |
 
 ## Native Nova software and roadmap
 
@@ -66,4 +83,4 @@ No private addresses, hostnames, paths, domains, identifiers, credentials, or ap
 
 ## Current operational truth
 
-Nova has a functioning self-hosted foundation, a verified multi-layer boot-convergence mechanism, a canonical media workflow, and authoritative host telemetry. The most important unfinished work is reducing remaining source drift, strengthening recovery coverage, improving application-native health checks, and building AI capabilities with evidence and human control.
+NOVA has a reconciled service foundation and a deployed Gate qualified through a controlled offline release. It has not yet restored normal Internet acquisition. The next evidence gate is exact admission plus Sonarr import qualification, followed by an explicitly authorized single-item pilot. Broader backup/restore and observability gaps remain separate work. See [Roadmap](roadmap.md).

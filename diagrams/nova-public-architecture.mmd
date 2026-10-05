@@ -1,56 +1,27 @@
 %%{init: {"theme":"base","flowchart":{"htmlLabels":false,"curve":"basis","nodeSpacing":34,"rankSpacing":46},"themeVariables":{"background":"#070b19","primaryColor":"#172554","primaryTextColor":"#f8fafc","primaryBorderColor":"#22d3ee","lineColor":"#94a3b8","secondaryColor":"#2e1065","tertiaryColor":"#111827","clusterBkg":"#0f172a","clusterBorder":"#6d28d9","edgeLabelBackground":"#111827","fontFamily":"Segoe UI, Inter, Arial, sans-serif","fontSize":"16px"}}}%%
 flowchart TB
-  User["Operator<br/>Uses Nova through trusted interfaces"]
-  Host["Windows Host<br/>Runs the desktop, WSL2, and native integrations"]
-  Tail["Tailscale<br/>Provides private access between trusted devices"]
-  WSL["WSL2 Ubuntu Environment<br/>Hosts Nova's Linux runtime and engineering workspace"]
-  Docker["Container Platform / Docker Service Layer<br/>Runs and isolates Nova's self-hosted workloads"]
-
-  User --> Host
-  Host --> Tail
-  Host --> WSL
-  WSL --> Docker
-
-  CoreOps["Core Operations<br/>Runs home automation, media, VPN, and credential workflows"]
-  Observe["System Health & Observability<br/>Collects metrics, logs, and availability evidence"]
-  Access["Dashboards & Administration<br/>Provides navigation, secure routing, and management"]
-  Knowledge["Engineering Source & Recovery Knowledge<br/>Preserves source, decisions, runbooks, and recovery evidence"]
-
-  Docker --> CoreOps
-  Docker --> Observe
-  Docker --> Access
-  WSL --> Knowledge
-
-  subgraph Roadmap["Nova Intelligence Roadmap"]
-    direction LR
-    Core["Nova Core<br/>Builds a model-independent knowledge foundation"]
-    Awareness["Nova Awareness<br/>Builds context about system state and activity"]
-    Retrieval["RAG & Retrieval<br/>Finds relevant knowledge before Nova answers"]
-    Agents["Agent Routing + MCP<br/>Chooses the right models and tools for a task"]
-    Approval["Human-Approved Actions<br/>Requires approval before sensitive changes"]
-    Core -.-> Retrieval
-    Awareness -.-> Agents
-    Retrieval -.-> Agents
-    Agents -.-> Approval
+  Owner["Owner + review<br/>Defines goals and authorizes changes"] --> Platform["Windows / WSL2 / Docker<br/>Hosts personal services"]
+  Platform --> Ops["Home Assistant / Vaultwarden<br/>Home automation and credentials"]
+  Ops ~~~ Observe["Prometheus / Grafana / Loki / Kuma<br/>Metrics, logs and availability"]
+  Observe ~~~ Access["Homepage / Caddy / Tailscale<br/>Navigation and private access"]
+  Platform --> Request
+  subgraph Media["Media safety boundary"]
+    direction TB
+    Request["Jellyseerr / Sonarr / Prowlarr<br/>Request and select a source — future pilot"]
+    Q["qBittorrent + Gluetun<br/>Download through the VPN boundary"]
+    Stage["Isolated ext4 staging<br/>Keep untrusted bytes away from consumers"]
+    Gate["Download Security Gate<br/>Validate type, structure, malware and identity"]
+    Release["Separate release boundary<br/>qB moves; Gate verifies completion"]
+    Import["Sonarr — future handoff<br/>Import only the exact released package"]
+    Library["Media library / Jellyfin<br/>Discover newly approved media — future pilot"]
+    Request -. "not yet qualified" .-> Q
+    Q --> Stage --> Gate --> Release
+    Release -. "separate qualification" .-> Import
+    Import -.-> Library
   end
-
-  Access -. "AI experimentation" .-> Roadmap
-  Knowledge -. "evidence and design" .-> Roadmap
-
-  subgraph Legend["Status"]
-    direction LR
-    LWork["Working"]
-    LPartial["Partial"]
-    LDev["In Development"]
-    LPlan["Planned"]
-  end
-
-  classDef working fill:#172554,stroke:#22d3ee,color:#f8fafc,stroke-width:2px
-  classDef partial fill:#3b1d5b,stroke:#e879f9,color:#f8fafc,stroke-width:2px
-  classDef development fill:#312e81,stroke:#a78bfa,color:#f8fafc,stroke-width:2px
-  classDef planned fill:#111827,stroke:#64748b,color:#cbd5e1,stroke-width:2px,stroke-dasharray:6 4
-
-  class Host,Tail,WSL,Docker,CoreOps,Observe,Access,Knowledge,LWork working
-  class LPartial partial
-  class Core,Awareness,LDev development
-  class Retrieval,Agents,Approval,LPlan planned
+  Access ~~~ Knowledge["Git / Obsidian / Nova HQ<br/>Source, evidence and decisions"]
+  Knowledge -.-> AI["Nova-native AI / MCP<br/>Prototypes and roadmap"]
+  classDef verified fill:#172554,stroke:#22d3ee,color:#f8fafc,stroke-width:2px
+  classDef future fill:#2e1065,stroke:#c084fc,color:#f8fafc,stroke-dasharray:5 5
+  class Owner,Platform,Ops,Observe,Access,Q,Stage,Gate,Release,Knowledge verified
+  class Request,Import,Library,AI future

@@ -1,69 +1,38 @@
 # Roadmap
 
-This roadmap describes direction, not promised delivery dates. A roadmap item remains planned until current implementation evidence proves otherwise.
+[Project overview](../README.md) · [Current state](current-state.md)
 
-<p align="center">
-  <img src="../assets/branding/nova-builder-roadmap.webp" alt="Illustrated Nova builder beside a Building Nova neon sign" width="720">
-</p>
+Reconciled October 4, 2026. This is a dependency plan, not authorization to act.
 
-## Current foundation
+## Completed
 
-- Maintain infrastructure stability across Docker and WSL2
-- Maintain the production-validated post-logon convergence verifier and its frozen V1 safety boundary
-- Continue service recovery and configuration reconciliation
-- Expand useful metrics, logs, uptime checks, and operational dashboards
-- Reduce drift between runtime, source control, and documentation
-- Improve backup coverage, integrity verification, and recovery instructions
-- Preserve private networking and clear trust boundaries
-- Keep operating procedures understandable and repeatable
+- Reconciled service baseline and retained bounded boot-recovery evidence.
+- Gate inventory, identity-bound filename/type and media validation, real ClamAV and trusted Defender adapters.
+- Private source qualification/checkpoints; canonical 471-test suite and separate 8-test deployment suite passed without skips.
+- Isolated production staging, separate release destination, consumer exclusion and Sonarr import hold.
+- Bounded production coordinator, persistent ledger, completion ingress and download-client move integration.
+- Offline production path through real PASSED and RELEASED, normal restart/replay checks, current VPN routing and bounded tunnel-down blocking.
 
-## Near term
+## Current
 
-- Resolve remaining documentation and configuration drift
-- Improve Git source-of-truth practices for deployment definitions
-- Verify backup coverage and perform isolated restore tests
-- Establish failure-domain-separated backup copies for critical state
-- Strengthen authentication, secret handling, and privileged integration boundaries
-- Review mutable image tags and improve version reproducibility
-- Validate monitoring targets, dashboards, retention, and notification paths
+**Final Pilot Admission + Sonarr Import Boundary** is in progress. None of its objectives is marked complete; the offline production proof remains the latest accepted milestone.
+
+**Acquisition disabled; live pilot NOT READY.** The deployed wrapper accepts an offline fixture convention, with an unresolved 16 MiB probe/admission constraint whose exact scope is being investigated. Exact live admission and post-RELEASED Sonarr import remain unqualified. The controlled proof does not establish general sub-2-GiB support.
+
+## Next
+
+1. Qualify exact admission and size/file-set fit, plus the read-only per-package Sonarr handoff and rollback. Keep a no-grab checkpoint.
+2. With explicit owner authorization, run one interactive acquisition from one approved source; require real validation and RELEASED before import and Jellyfin discovery.
+3. Review the pilot, then qualify unattended admission, event/retry/recovery behavior, operator alerts and supported content scope before enabling normal acquisition.
+
+Large or unsupported packages remain held. No automatic RSS/search, broad acquisition or retention deletion follows from the offline result.
 
 ## Later
 
-- Build and evaluate a RAG-backed personal memory prototype
-- Compare embedding and retrieval approaches with measurable test questions
-- Define provenance and confidence behavior for retrieved information
-- Explore agent routing without granting uncontrolled action authority
-- Evaluate MCP-enabled tools within explicit permission boundaries
-- Add human-approved actions with audit logs and rollback paths
-- Compare local and cloud model selection for privacy, quality, and cost
-- Explore voice and multimodal interfaces
-- Explore robotics, Raspberry Pi, wearable, and ambient interfaces
+- Broader application restore and independent recovery coverage.
+- More complete health checks, alerts, provisioning and observability retention.
+- Separately qualified parser sizes, multifile/sidecar support and large-media policy where justified.
+- Evaluated read-only MCP and retrieval, then advanced home automation and voice under human control.
+- Nova-native memory, routing and action concepts after meaningful evaluation and permission tests.
 
-## Gates before AI action capability
-
-Future actions should not move from concept to implementation until these questions have clear answers:
-
-1. What exact problem does the action solve?
-2. What data and systems can it access?
-3. How are credentials and permissions isolated?
-4. What evidence supports the model's decision?
-5. What happens when retrieval is incomplete or wrong?
-6. Where is human approval required?
-7. What is logged, and how is sensitive data protected?
-8. How can the action be reversed?
-9. How will quality and failure behavior be evaluated?
-10. Who owns the handoff when automation stops?
-
-## Explicitly not complete
-
-- Production RAG memory
-- Working embedding and retrieval pipeline
-- NovaVault persistent AI memory
-- Production agent routing
-- Completed MCP integration
-- Autonomous AI agents
-- Human-approved AI actions
-- Dependable local-model orchestration
-- Finished Discord AI assistant
-- Voice-first assistant
-- Robotics or wearable integration
+These remain separate from the current media objective. Safe bounded pilot work should not wait for every possible infrastructure improvement. See the [Gate case study](case-study-download-security-gate.md) for the qualification limits.

@@ -76,3 +76,23 @@ The same habits apply to enterprise systems work:
 - Protect user and system data.
 - Communicate what was verified and what remains unknown.
 - Create a repeatable process instead of relying on memory.
+
+## Gate recovery qualification
+
+The October 4 offline production run preserved an exhausted historical attempt while a separately admitted fresh package completed. Normal service restarts at PASSED and RELEASED preserved durable records without an automatic release or duplicate scan/move. Completion replay for an existing package created no new work. Cleanup removed exact test payloads while retaining ledger history.
+
+This is bounded Gate recovery evidence. It does not close broader off-host backup gaps or qualify every interruption/power-loss mode. Live admission and media-manager import remain separate gates. See the [case study](case-study-download-security-gate.md).
+
+## Human-governed AI engineering
+
+NOVA uses scoped engineering campaigns. The owner defines the objective, permitted changes, protected state and rollback boundary. FORGE/ORION planning roles organize dependencies and acceptance gates; Codex assists with scoped implementation, diagnosis and verification.
+
+| Decision | Meaning |
+|---|---|
+| FIX AND CONTINUE | Correct a safe in-scope defect, verify the affected behavior and continue. Never weaken an assertion or silently broaden authority. |
+| CHECKPOINT AND CONTINUE | Preserve the accepted source/evidence/state and move to the next authorized phase. A checkpoint is not permission for a new production action. |
+| HARD STOP | Stop the affected scope for missing authority, unsafe ambiguity or an overwrite risk; continue independent authorized work. |
+
+Each phase states what success proves, what it does not prove, and where human approval is required. Failed attempts, source identities and rollback evidence are retained. Internet acquisition and destructive actions require explicit scope. The reusable technical template has one private canonical home; this public summary explains the method without reproducing operational instructions.
+
+AI-assisted engineering is part of the development process. It is separate from the still-planned Nova-native autonomous action platform.
