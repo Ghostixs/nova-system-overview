@@ -81,7 +81,7 @@ The same habits apply to enterprise systems work:
 
 The October 4 offline production run preserved an exhausted historical attempt while a separately admitted fresh package completed. Normal service restarts at PASSED and RELEASED preserved durable records without an automatic release or duplicate scan/move. Completion replay for an existing package created no new work. Cleanup removed exact test payloads while retaining ledger history.
 
-This is bounded Gate recovery evidence. It does not close broader off-host backup gaps or qualify every interruption/power-loss mode. Live admission and media-manager import remain separate gates. See the [case study](case-study-download-security-gate.md).
+This is bounded Gate recovery evidence. It does not close broader off-host backup gaps or qualify every interruption/power-loss mode. The later final-admission milestone qualifies production admission and the read-only disposable copy contract. Production application and the controlled Internet/import pilot remain separately owner-gated. See the [case study](case-study-download-security-gate.md).
 
 ## Human-governed AI engineering
 

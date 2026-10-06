@@ -1,6 +1,6 @@
 # Current State
 
-Latest Gate evidence: **October 4, 2026**. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
+Latest Gate evidence: **October 4 final-admission checkpoint**, reconciled **October 6, 2026**. This is dated evidence, not a new live audit. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
 
 ## How to read this page
 
@@ -12,12 +12,14 @@ No private addresses, hostnames, paths, domains, identifiers, credentials, or ap
 
 | Qualification level | Verified state |
 |---|---|
-| Source | 471/471 canonical core tests and 8/8 separate deployment tests, zero skips |
+| Source | 471/471 canonical Gate tests and 26/26 deployment/admission tests, zero skips |
 | Runtime | Real filename/type, libmagic, FFprobe and both scanners completed for the same live offline package |
 | Production topology | Isolated staging, separate release destination and consumer exclusion; Sonarr import handling held |
 | Deployment | Bounded coordinator, durable ledger and completion ingress deployed |
 | Offline end-to-end | Qualified through RELEASED, including actual move observations and normal restart/replay |
-| Live pilot | NOT READY: fixture-only admission, 16 MiB parser bound and Sonarr handoff remain |
+| Production admission | QUALIFIED; pinned read-only disk input resolves the whole-file 16 MiB issue; 6.6 MB, 25 MB and 130 MB production-shaped fixtures reached RELEASED |
+| Sonarr release visibility | DESIGN QUALIFIED / NOT YET APPLIED; read-only disposable 130 MB copy preserved source hash |
+| Live pilot | READY PENDING OWNER AUTHORIZATION FOR SONARR/PILOT TRANSACTION; Internet acquisition NOT PERFORMED |
 | Normal automatic acquisition | Disabled and unqualified |
 
 The completed offline campaign left no test torrents or staging/release payloads. Sonarr imported nothing; existing media was unchanged. Current VPN egress and a bounded tunnel-down fail-closed check passed. An earlier exhausted attempt remains preserved.
@@ -64,10 +66,10 @@ The completed offline campaign left no test torrents or staging/release payloads
 |---|---|---|
 | Jellyfin | Application-state restore previously verified; playback service retained | No new request-to-Jellyfin pilot completed |
 | Jellyseerr | Existing request interface | Acquisition is deliberately disabled |
-| Sonarr | Library-only visibility; Completed Download Handling OFF | Post-RELEASED read-only copy import unqualified |
+| Sonarr | Library-only visibility; Completed Download Handling OFF | Read-only disposable copy design qualified; production transaction not yet applied |
 | Radarr | Library-only visibility; existing configuration preserved | Outside the first pilot |
 | Prowlarr / Arr indexers | Disabled at the final checkpoint | No source or grab authorized by documentation |
-| qBittorrent | Attached to isolated staging/release; real completion and move exercised | Fixture-only admission; no Internet media acquisition |
+| qBittorrent | Attached to isolated staging/release; real completion and move exercised | Production admission qualified beyond 16 MiB; no Internet acquisition at the selected checkpoint |
 | Gluetun | Tunnel routing, forwarding synchronization and bounded tunnel-down blocking verified | No claim covering every failure mode |
 | Other media support services | Earlier runtime evidence retained | No new feature qualification in this campaign |
 
@@ -83,4 +85,4 @@ The completed offline campaign left no test torrents or staging/release payloads
 
 ## Current operational truth
 
-NOVA has a reconciled service foundation and a deployed Gate qualified through a controlled offline release. It has not yet restored normal Internet acquisition. The next evidence gate is exact admission plus Sonarr import qualification, followed by an explicitly authorized single-item pilot. Broader backup/restore and observability gaps remain separate work. See [Roadmap](roadmap.md).
+NOVA has a reconciled service foundation and a deployed Gate qualified through a controlled offline release. It has not yet restored normal Internet acquisition. Production admission and read-only release visibility design are qualified. The next step is the explicitly authorized single-item Sonarr/pilot transaction. Broader backup/restore and observability gaps remain separate work. See [Roadmap](roadmap.md).

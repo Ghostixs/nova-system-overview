@@ -2,28 +2,31 @@
 
 [Project overview](../README.md) · [Current state](current-state.md)
 
-Reconciled October 4, 2026. This is a dependency plan, not authorization to act.
+Reconciled October 6, 2026 to the selected October 4 final-admission checkpoint. This is a dependency plan, not authorization to act.
 
 ## Completed
 
 - Reconciled service baseline and retained bounded boot-recovery evidence.
 - Gate inventory, identity-bound filename/type and media validation, real ClamAV and trusted Defender adapters.
-- Private source qualification/checkpoints; canonical 471-test suite and separate 8-test deployment suite passed without skips.
+- Private source qualification/checkpoints; canonical 471-test suite and separate 26-test deployment/admission suite passed without skips.
 - Isolated production staging, separate release destination, consumer exclusion and Sonarr import hold.
 - Bounded production coordinator, persistent ledger, completion ingress and download-client move integration.
 - Offline production path through real PASSED and RELEASED, normal restart/replay checks, current VPN routing and bounded tunnel-down blocking.
 
 ## Current
 
-**Final Pilot Admission + Sonarr Import Boundary** is in progress. None of its objectives is marked complete; the offline production proof remains the latest accepted milestone.
+**Final Pilot Admission + Sonarr Import Boundary** completed through its owner-authorization boundary. Production admission, fixtures through 130 MB and read-only disposable import design are qualified.
 
-**Acquisition disabled; live pilot NOT READY.** The deployed wrapper accepts an offline fixture convention, with an unresolved 16 MiB probe/admission constraint whose exact scope is being investigated. Exact live admission and post-RELEASED Sonarr import remain unqualified. The controlled proof does not establish general sub-2-GiB support.
+**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+
+**READY PENDING OWNER AUTHORIZATION FOR SONARR/PILOT TRANSACTION.** The whole-file 16 MiB issue is safely resolved by pinned, read-only disk input. Production Sonarr release visibility remains DESIGN QUALIFIED / NOT YET APPLIED; CDH OFF; Internet acquisition NOT PERFORMED in this checkpoint. The unchanged ClamAV ceiling still holds oversized content.
 
 ## Next
 
-1. Qualify exact admission and size/file-set fit, plus the read-only per-package Sonarr handoff and rollback. Keep a no-grab checkpoint.
-2. With explicit owner authorization, run one interactive acquisition from one approved source; require real validation and RELEASED before import and Jellyfin discovery.
-3. Review the pilot, then qualify unattended admission, event/retry/recovery behavior, operator alerts and supported content scope before enabling normal acquisition.
+1. Select one exact lawful/open sub-ceiling item and source, then obtain explicit owner authorization for the bounded transaction.
+2. Perform one manual acquisition; require real validation, durable RELEASED and final identity before exposing only that package read-only to Sonarr.
+3. Enable CDH at the appropriate authorized stage, observe actual import and media discovery, then restore safe acquisition controls.
+4. Qualify unattended operations and broader content scope separately. Gate architecture development is not the next prerequisite.
 
 Large or unsupported packages remain held. No automatic RSS/search, broad acquisition or retention deletion follows from the offline result.
 

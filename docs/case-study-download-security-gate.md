@@ -2,7 +2,9 @@
 
 [Project overview](../README.md) · [Current state](current-state.md) · [Roadmap](roadmap.md)
 
-**October 4, 2026: deployed and offline-qualified through RELEASED. Internet acquisition remains disabled. The live acquisition pilot is not ready.**
+**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+
+Reconciled October 6, 2026 from the selected October 4 final-admission checkpoint. This is dated campaign evidence, not a new live runtime audit.
 
 NOVA is my personal infrastructure engineering project across Windows, Linux, WSL2 and Docker. This case study describes how I separated untrusted downloads, validation, release and import. It is an account of a bounded engineering qualification, with explicit limits on what was proved.
 
@@ -20,7 +22,7 @@ The deployed portion uses isolated Linux staging, a durable validation ledger an
 
 [Open diagram](../diagrams/nova-gate-sequence.svg) · [Mermaid source](../diagrams/nova-gate-sequence.mmd)
 
-The sequence includes future acquisition and import steps so the intended user journey is visible. Its dashed future handoff is not a completed capability.
+The diagram retains the earlier scanner-preflight checkpoint. The later final-admission milestone qualifies the read-only disposable import design; its dashed production acquisition/import steps remain pending.
 
 | Boundary | Decision |
 |---|---|
@@ -29,7 +31,7 @@ The sequence includes future acquisition and import steps so the intended user j
 | PASSED | Validation succeeded. No move follows merely from this state. |
 | RELEASE_PENDING | A separately authorized, durable release intent exists; movement is still in progress. |
 | RELEASED | The supported move completed and final identity was reverified. |
-| Media Manager / Library | Import needs a separately qualified consumer handoff. |
+| Media Manager / Library | Read-only disposable copy contract qualified; production application needs exact owner authorization after RELEASED. |
 
 **PASSED is not release permission. RELEASED is not IMPORTED.** The conceptual journey is `DOWNLOADING → VALIDATING → PASSED → RELEASE_PENDING → RELEASED → IMPORTED`; it omits intermediate Gate states for readability. IMPORTED is a media-manager outcome, not an added Gate state. Incomplete or unsupported evidence results in a hold; adverse evidence prevents progress and requires review.
 
@@ -67,21 +69,30 @@ Normal service restarts were tested at PASSED and RELEASED. The durable ledger s
 
 ## Verification and current status
 
+Reconciled October 6, 2026 from the selected October 4 final-admission checkpoint. This is dated campaign evidence, not a new live runtime audit.
+
 | Evidence | Result | Limit |
 |---|---|---|
-| Canonical isolated core suite | **471/471 passed, zero skips** | Source regression evidence, not deployment approval by itself |
-| Separate deployment boundary suite | **8/8 passed, zero skips** | Bounded admission, configuration and producer-control checks |
-| Real offline production validation | All mandatory live layers passed; durable PASSED | A disposable single-file fixture within the current parser limit |
-| Actual download-client move | RELEASE_PENDING → RELEASED | Controlled offline cross-filesystem move; no Internet media acquisition |
-| Normal restart and completion replay | PASSED/RELEASED preserved; no duplicate action | Does not qualify arbitrary interruption modes |
-| VPN boundary | Current egress and bounded tunnel-down blocking verified | Tested condition only; no universal network-failure claim |
-| Consumer exclusion | No media-manager import; existing media unchanged | Import behavior remains a separate qualification |
+| Canonical Gate suite | **471/471 passed, zero skips** | Retained regression evidence |
+| Deployment/admission suite | **26/26 passed, zero skips** | Supersedes the earlier 8/8 current count |
+| Production admission | **QUALIFIED** | Bounded single-file pilot contract; offline-only wrapper no longer required |
+| Production-shaped fixtures | **6.6 MB, 25 MB and 130 MB reached RELEASED** | Does not qualify every sub-ceiling input or arbitrary file set |
+| Read-only released-package import | Disposable Sonarr copied the 130 MB fixture; source hash preserved | Design qualified; production mount transaction not yet applied |
+| Sonarr staging visibility | **NONE** | Untrusted and moving content stays hidden |
+| Sonarr Completed Download Handling | **OFF** | No production automatic-CDH pilot completed at this checkpoint |
+| Internet acquisition | **NOT PERFORMED** | One exact owner-authorized controlled pilot remains |
 
-The Gate is deployed with persistent state and real completion ingress. Qualification ended with no test torrents or payloads left in staging/release and acquisition disabled. **Offline end-to-end qualification stops at RELEASED.**
+Production-shaped admission is qualified beyond the earlier 16 MiB test constraint, and the release-to-media-manager boundary has been validated with a read-only disposable import contract.
 
-The wrapper still admits only the offline fixture convention, and the latest completed qualification used a **16 MiB** probe/admission constraint. Its precise scope and whether it limits the whole file are being investigated; no larger-input production readiness is established. It is not ready for arbitrary movie or episode downloads. ClamAV's engine ceiling remains **2,147,483,647 bytes**, with a slightly lower conservative adapter limit; larger content remains held. Being below that scanner ceiling does not establish parser or package support.
+The earlier whole-file cutoff came from a copied-input parser profile. Production now uses pinned, read-only disk input instead of materializing the whole file in memory. Memory, CPU, output and timeout bounds remain in place. The default copied-input profile's 16 MiB bound is not a generic media ceiling.
 
-The current engineering campaign is **Final Pilot Admission + Sonarr Import Boundary**. It is in progress, with no completed result yet. Its next gates are production-shaped admission, correct scoping/qualification of the 16 MiB constraint and a read-only, per-package Sonarr import handoff. A compatible item/source, meaningful denial tests, rollback and a no-grab checkpoint must precede explicit owner authorization for one Internet pilot. Automatic acquisition, broader file sets and larger-media policy remain later work.
+ClamAV's large-file ceiling is unchanged at **2,147,483,647 bytes**. Content above it remains HELD. Qualification through 130 MB does not guarantee every admissible file finishes within the retained resource limits.
+
+**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+
+The campaign ended with Gate active, the VPN healthy, the downloader bound to its tunnel, zero torrents, empty staging/release, CDH OFF, disabled indexers and unchanged production media metadata. These are retained checkpoint facts.
+
+The next step is an exact owner-authorized transaction: select one lawful/open item and source, perform one manual acquisition through genuine validation and durable RELEASED, expose only that verified package read-only, enable CDH at the appropriate authorized stage, observe actual import, and restore safe controls. Gate architecture development is not the next prerequisite. No production mount application, CDH enablement or Internet pilot completion is claimed here.
 
 ## Engineering takeaways
 

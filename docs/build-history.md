@@ -83,6 +83,10 @@ The media pipeline evolved from shared filesystem access into distinct staging, 
 5. Production deployment added bounded completion ingress and persistent recovery. An initial attempt exhausted its retry budget and remained preserved.
 6. On October 4, scanner preflight and a fresh offline package completed real PASSED → RELEASED on attempt one. Normal restart/replay and bounded VPN failure checks passed. Retained suites: 471 core + 8 deployment tests, zero skips.
 
-The campaign ended empty of test payloads, without Sonarr import or Internet acquisition. Exact live admission, the 16 MiB parser contract and the import handoff remain the next gates; the controlled Internet pilot is not complete.
+That scanner-preflight campaign ended empty of test payloads, without production import or Internet acquisition. Its 8-test count is historical.
+
+7. The later Final Pilot Admission + Sonarr Import Boundary campaign qualified production admission without the offline-only wrapper, resolved the whole-file 16 MiB cutoff through pinned read-only disk input, and released 6.6 MB, 25 MB and 130 MB production-shaped fixtures. Disposable Sonarr copied the 130 MB release read-only with source hash preserved. Retained suites: **471/471 Gate + 26/26 deployment**.
+
+**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.** The production Sonarr transaction remains unapplied, CDH OFF and Internet acquisition NOT PERFORMED in the selected final-admission checkpoint. Documentation was reconciled October 6; no new runtime audit is claimed.
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](case-study-download-security-gate.md). Earlier milestones above retain their original evidence dates.
