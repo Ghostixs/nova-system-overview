@@ -2,9 +2,11 @@
 
 [Project overview](../README.md) · [Current state](current-state.md) · [Roadmap](roadmap.md)
 
-**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
 
-Reconciled October 6, 2026 from the selected October 4 final-admission checkpoint. This is dated campaign evidence, not a new live runtime audit.
+**Live owner-driven acquisition, validation, release, import and Jellyfin delivery verified.**
+
+Current acceptance: **October 6, 2026**, based on the completed owner-run transaction and retained acceptance records. Earlier qualification milestones remain historical.
 
 NOVA is my personal infrastructure engineering project across Windows, Linux, WSL2 and Docker. This case study describes how I separated untrusted downloads, validation, release and import. It is an account of a bounded engineering qualification, with explicit limits on what was proved.
 
@@ -22,7 +24,7 @@ The deployed portion uses isolated Linux staging, a durable validation ledger an
 
 [Open diagram](../diagrams/nova-gate-sequence.svg) · [Mermaid source](../diagrams/nova-gate-sequence.mmd)
 
-The diagram retains the earlier scanner-preflight checkpoint. The later final-admission milestone qualifies the read-only disposable import design; its dashed production acquisition/import steps remain pending.
+The diagram preserves the earlier scanner-preflight checkpoint. Its future-step labels are historical; the later milestones below qualify admission, the read-only import boundary and live owner-driven delivery.
 
 | Boundary | Decision |
 |---|---|
@@ -31,7 +33,7 @@ The diagram retains the earlier scanner-preflight checkpoint. The later final-ad
 | PASSED | Validation succeeded. No move follows merely from this state. |
 | RELEASE_PENDING | A separately authorized, durable release intent exists; movement is still in progress. |
 | RELEASED | The supported move completed and final identity was reverified. |
-| Media Manager / Library | Read-only disposable copy contract qualified; production application needs exact owner authorization after RELEASED. |
+| Media Manager / Library | Exact durably RELEASED package exposed read-only for qualified import; temporary exposure withdrawn after use. |
 
 **PASSED is not release permission. RELEASED is not IMPORTED.** The conceptual journey is `DOWNLOADING → VALIDATING → PASSED → RELEASE_PENDING → RELEASED → IMPORTED`; it omits intermediate Gate states for readability. IMPORTED is a media-manager outcome, not an added Gate state. Incomplete or unsupported evidence results in a hold; adverse evidence prevents progress and requires review.
 
@@ -67,32 +69,70 @@ An initial production attempt exhausted its bounded retry budget. I preserved th
 
 Normal service restarts were tested at PASSED and RELEASED. The durable ledger survived; PASSED did not trigger an automatic move, and RELEASED did not trigger a duplicate scan or move. A repeated completion signal for an existing package was rejected as new work. These results cover the tested restart/replay cases, not every possible crash or power-loss scenario.
 
-## Verification and current status
+## Live owner-driven production acceptance
 
-Reconciled October 6, 2026 from the selected October 4 final-admission checkpoint. This is dated campaign evidence, not a new live runtime audit.
+**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
 
-| Evidence | Result | Limit |
-|---|---|---|
-| Canonical Gate suite | **471/471 passed, zero skips** | Retained regression evidence |
-| Deployment/admission suite | **26/26 passed, zero skips** | Supersedes the earlier 8/8 current count |
-| Production admission | **QUALIFIED** | Bounded single-file pilot contract; offline-only wrapper no longer required |
-| Production-shaped fixtures | **6.6 MB, 25 MB and 130 MB reached RELEASED** | Does not qualify every sub-ceiling input or arbitrary file set |
-| Read-only released-package import | Disposable Sonarr copied the 130 MB fixture; source hash preserved | Design qualified; production mount transaction not yet applied |
-| Sonarr staging visibility | **NONE** | Untrusted and moving content stays hidden |
-| Sonarr Completed Download Handling | **OFF** | No production automatic-CDH pilot completed at this checkpoint |
-| Internet acquisition | **NOT PERFORMED** | One exact owner-authorized controlled pilot remains |
+The owner selects an approved publisher item, reviews the resolved acquisition, explicitly authorizes download, and separately authorizes release only after the security Gate passes. The first live owner-driven transaction completed through Sonarr import and Jellyfin delivery, followed by transient-state cleanup.
 
-Production-shaped admission is qualified beyond the earlier 16 MiB test constraint, and the release-to-media-manager boundary has been validated with a read-only disposable import contract.
+The owner used the installed Windows-facing NOVA Media.cmd directly for **Gran Dillama**. Fresh APPROVE preceded acquisition. Genuine Gate PASSED preceded personal RELEASE; RELEASE_PENDING held during movement, and durable RELEASED preceded import. The owner workflow did not manufacture trusted evidence or turn one item approval into future authorization.
 
-The earlier whole-file cutoff came from a copied-input parser profile. Production now uses pinned, read-only disk input instead of materializing the whole file in memory. Memory, CPU, output and timeout bounds remain in place. The default copied-input profile's 16 MiB bound is not a generic media ceiling.
+```mermaid
+flowchart LR
+  Preview["Owner reviews exact approved item"] --> Approve["Owner APPROVE"]
+  Approve --> Acquire["Acquire one item"]
+  Acquire --> Gate["Gate validates / PASSED"]
+  Gate --> Release["Owner RELEASE"]
+  Release --> Move["RELEASE_PENDING / controlled move"]
+  Move --> Released["Durable RELEASED"]
+  Released --> Import["Exact read-only Sonarr import"]
+  Import --> Jellyfin["Jellyfin delivery"]
+  Jellyfin --> Cleanup["Transient cleanup / ready"]
+```
 
-ClamAV's large-file ceiling is unchanged at **2,147,483,647 bytes**. Content above it remains HELD. Qualification through 130 MB does not guarantee every admissible file finishes within the retained resource limits.
+Only qualified released content became import-eligible. Sonarr staging visibility stayed prohibited. The temporary read-only release-package exposure was withdrawn after import, and Completed Download Handling returned OFF. Canonical media and security evidence were retained.
 
-**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+Acceptance review correlated the supplied owner transcript, distinct approval records, durable Gate/transaction evidence, actual Sonarr file/history records, Jellyfin API and clean resting-state checks. It was retrospective verification, not continuous independent observation of every keystroke or transient mount. Jellyfin delivery is verified; no agent playback claim is made.
 
-The campaign ended with Gate active, the VPN healthy, the downloader bound to its tunnel, zero torrents, empty staging/release, CDH OFF, disabled indexers and unchanged production media metadata. These are retained checkpoint facts.
+## Failed attempt, authorized recovery, fresh approval
 
-The next step is an exact owner-authorized transaction: select one lawful/open item and source, perform one manual acquisition through genuine validation and durable RELEASED, expose only that verified package read-only, enable CDH at the appropriate authorized stage, observe actual import, and restore safe controls. Gate architecture development is not the next prerequisite. No production mount application, CDH enablement or Internet pilot completion is claimed here.
+These are three separate engineering events:
+
+1. The first owner-approved attempt encountered a stopped-add startup readiness defect before downloading media. It failed closed, stopped acquisition services and retained only exact zero-byte torrent metadata. It did not release or import content.
+2. After the reviewed correction, a separately owner-authorized recovery removed only that exact metadata, verified the stopped baseline and restored qualified Level 1. Recovery performed no acquisition and preserved existing media/playback history.
+3. The owner issued a NEW approval for the successful Gran Dillama transaction, then personally authorized release after validation. The old approval was not reused.
+
+This proves useful failure behavior and authorization non-reuse. It does not turn every possible crash or failure mode into a qualified case.
+
+## Verification and current operating policy
+
+| Evidence | Result |
+|---|---|
+| Live installed owner interface | **PRODUCTION ACCEPTED** |
+| Owner APPROVE per item | **REQUIRED; verified before acquisition** |
+| Owner RELEASE after validation | **REQUIRED; verified after genuine PASSED** |
+| Gate security authority | **PRESERVED** |
+| Sonarr import / Jellyfin delivery / transient cleanup | **VERIFIED** |
+| Emergency stop | **PRODUCTION QUALIFIED** |
+| Canonical Gate | **471 PASS** |
+| Deployment/admission | **26 PASS** |
+| Policy / qualified stop | **30 PASS** |
+| Retained import evidence | **8 PASS** |
+| Repaired owner workflow | **79 PASS** |
+| Total latest regression | **614 PASS, zero skips** |
+| Indexers / RSS / automatic search | **DISABLED / OFF / OFF** |
+| Radarr / Level 2 | **DEFERRED / NOT ENABLED** |
+| Normal Level 1 use | **READY — USE AND OBSERVE** |
+
+This is owner-attended, publisher-restricted operation with exact supported mappings, arbitrary torrent input refused, one active transaction, mandatory Gate validation and no standing approval. Disabled discovery is intentional policy, not an unfinished Level 1 acceptance test.
+
+## Preserved qualification milestones and limits
+
+Earlier production admission eliminated dependence on the offline-only wrapper. Pinned, read-only disk input resolved the whole-file 16 MiB cutoff while keeping parser memory, CPU, output and timeout bounds. Production-shaped 6.6 MB, 25 MB and 130 MB fixtures reached RELEASED. Disposable Sonarr copied the 130 MB release read-only with source hash preserved; subsequent controlled import, Level 1 enablement and live owner acceptance completed the approved scope.
+
+The scanner ceiling remains **2,147,483,647 bytes**; oversized and unsupported content stays HELD. No arbitrary publisher/torrent support, Radarr acquisition, RSS/indexer automation, Level 2 or >2 GiB support is claimed.
+
+The implementation campaign is operationally complete for approved Level 1 scope. Current phase: **USE AND OBSERVE**. Additional publishers, sidecars, Radarr, a large-media strategy and UX improvements are optional future owner decisions driven by actual use; they are not blockers to current operation.
 
 ## Engineering takeaways
 

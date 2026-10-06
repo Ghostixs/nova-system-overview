@@ -81,7 +81,15 @@ The same habits apply to enterprise systems work:
 
 The October 4 offline production run preserved an exhausted historical attempt while a separately admitted fresh package completed. Normal service restarts at PASSED and RELEASED preserved durable records without an automatic release or duplicate scan/move. Completion replay for an existing package created no new work. Cleanup removed exact test payloads while retaining ledger history.
 
-This is bounded Gate recovery evidence. It does not close broader off-host backup gaps or qualify every interruption/power-loss mode. The later final-admission milestone qualifies production admission and the read-only disposable copy contract. Production application and the controlled Internet/import pilot remain separately owner-gated. See the [case study](case-study-download-security-gate.md).
+This is bounded Gate recovery evidence. It does not close broader off-host backup gaps or qualify every interruption/power-loss mode. Subsequent controlled import, Level 1 enablement and live owner-driven acceptance completed the approved operating scope. Every new supported item still requires personal APPROVE and post-validation RELEASE. See the [case study](case-study-download-security-gate.md).
+
+## NOVA Media attended operation and emergency recovery
+
+NOVA Media Level 1 is operational and live production accepted. The Windows-facing owner interface abstracts WSL, container, downloader and media-manager operations while keeping the independent security Gate mandatory. One item runs at a time; exact-item APPROVE and post-validation RELEASE are separate human decisions. Indexers/RSS/search stay disabled by policy; Radarr deferred and Level 2 not enabled.
+
+The first live attempt failed closed on stopped-add readiness before downloading media. The qualified containment stopped acquisition services. After the defect correction, separately authorized recovery removed only exact retained zero-byte torrent metadata, verified the stopped baseline and restored Level 1 without acquisition. Its earlier approval was not reused. A NEW owner approval then completed Gran Dillama through import, Jellyfin delivery and cleanup. Emergency Level 0 rollback and Level 1 re-entry remain production-qualified; the later acceptance review checked stop availability without another disruptive drill.
+
+The recorded resting boundary excludes staging/release from Sonarr and returns CDH OFF. Transient cleanup preserves canonical media, playback history and Gate evidence. Current phase is **USE AND OBSERVE**; use feedback drives optional later decisions rather than automatic expansion.
 
 ## Human-governed AI engineering
 

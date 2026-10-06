@@ -20,7 +20,7 @@ Claims in this repository use the following order of authority:
 
 When two sources disagree, the discrepancy is documented as drift. A plan is never promoted to a working capability because a directory or design document exists.
 
-The selected October 4 final-admission milestone qualifies production admission beyond 16 MiB and the read-only disposable release-to-import design. The production Sonarr transaction and Internet pilot remain pending; documentation was reconciled October 6. Other service descriptions retain the dates on [Current state](current-state.md).
+NOVA Media Level 1 is live production accepted as of October 6. The installed owner interface preserves separate exact-item APPROVE and post-validation RELEASE boundaries, with actual Sonarr import/Jellyfin delivery and cleanup verified. Other service descriptions retain the dates on [Current state](current-state.md).
 
 ## Status language
 
@@ -81,7 +81,7 @@ At a high level:
 
 ### Core Operations
 
-Home Assistant connects smart-home devices and automations. Vaultwarden stores encrypted credentials under self-hosted control. Media services provide requests, libraries, subtitles and playback. Internet acquisition remains disabled in the selected checkpoint. Gate admission and read-only import design are qualified; production application awaits owner authorization. The deployed offline chain separates staging, validation and release; the VPN boundary passed the bounded failure test described in the case study.
+Home Assistant connects smart-home devices and automations. Vaultwarden stores encrypted credentials under self-hosted control. Media services provide requests, libraries, subtitles and playback. Acquisition operates only through approved owner-attended Level 1 transactions. The interface resolves and previews supported publisher items, requires APPROVE before acquisition and personal RELEASE after genuine Gate validation, then coordinates exact read-only import and cleanup. Indexers/RSS/search remain disabled; Radarr and Level 2 are outside this accepted scope.
 
 ### System Health & Observability
 
@@ -125,7 +125,7 @@ Read [Case Study: Nova Boot Recovery V1](case-study-boot-recovery.md).
 
 ## Media trust transitions
 
-Validation is not release, and release is not import. The intended full workflow appears in the overview diagram; dashed steps remain unqualified. The deployed offline portion ends at RELEASED. The qualified read-only exact-package consumer handoff may follow only after RELEASED and separate owner authorization for production application. Broad shared filesystem access or a remote path mapping cannot stand in for that boundary.
+Validation is not release, and release is not import. The earlier diagrams retain their historical qualification scope. Current attended production operation exposes only the exact durable RELEASED package read-only to Sonarr, records actual import/Jellyfin delivery, then withdraws transient exposure. At rest consumers cannot see staging or release. Broad shared access or remote path mapping cannot replace the boundary. Gate security authority stays independent from UX.
 
 ## Architecture decisions that matter
 

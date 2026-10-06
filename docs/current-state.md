@@ -1,6 +1,6 @@
 # Current State
 
-Latest Gate evidence: **October 4 final-admission checkpoint**, reconciled **October 6, 2026**. This is dated evidence, not a new live audit. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
+Latest media evidence: **October 6, 2026 — live owner-driven Level 1 production acceptance**. This documentation update uses retained acceptance evidence; it is not a separate new runtime audit. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
 
 ## How to read this page
 
@@ -8,23 +8,30 @@ Latest Gate evidence: **October 4 final-admission checkpoint**, reconciled **Oct
 
 No private addresses, hostnames, paths, domains, identifiers, credentials, or application data are included.
 
-## Download Security Gate
+## NOVA Media Level 1
 
-| Qualification level | Verified state |
+**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
+
+**Live owner-driven acquisition, validation, release, import and Jellyfin delivery verified.**
+
+| Status | Current accepted scope |
 |---|---|
-| Source | 471/471 canonical Gate tests and 26/26 deployment/admission tests, zero skips |
-| Runtime | Real filename/type, libmagic, FFprobe and both scanners completed for the same live offline package |
-| Production topology | Isolated staging, separate release destination and consumer exclusion; Sonarr import handling held |
-| Deployment | Bounded coordinator, durable ledger and completion ingress deployed |
-| Offline end-to-end | Qualified through RELEASED, including actual move observations and normal restart/replay |
-| Production admission | QUALIFIED; pinned read-only disk input resolves the whole-file 16 MiB issue; 6.6 MB, 25 MB and 130 MB production-shaped fixtures reached RELEASED |
-| Sonarr release visibility | DESIGN QUALIFIED / NOT YET APPLIED; read-only disposable 130 MB copy preserved source hash |
-| Live pilot | READY PENDING OWNER AUTHORIZATION FOR SONARR/PILOT TRANSACTION; Internet acquisition NOT PERFORMED |
-| Normal automatic acquisition | Disabled and unqualified |
+| Mode | **LEVEL 1 — OWNER-ATTENDED MANUAL GATED** |
+| Owner workflow | **LIVE PRODUCTION ACCEPTED** through installed Windows operator interface |
+| Per-item APPROVE / post-validation RELEASE | **REQUIRED / REQUIRED** |
+| Gate security authority | **PRESERVED** |
+| Sonarr import / Jellyfin / cleanup | **VERIFIED** for the owner-approved Gran Dillama transaction |
+| Emergency stop | **PRODUCTION QUALIFIED** |
+| Latest regression | **614 PASS, zero skips**: 471 Gate + 26 deployment + 30 policy/stop + 8 import evidence + 79 owner workflow |
+| Indexers / RSS / automatic search | **DISABLED / OFF / OFF** |
+| Radarr / Level 2 | **DEFERRED / NOT ENABLED** |
+| Normal Level 1 use / current phase | **READY / USE AND OBSERVE** |
 
-The completed offline campaign left no test torrents or staging/release payloads. Sonarr imported nothing; existing media was unchanged. Current VPN egress and a bounded tunnel-down fail-closed check passed. An earlier exhausted attempt remains preserved.
+Approval applies only to the exact reviewed item. No acquisition precedes APPROVE; no release precedes genuine Gate PASSED and personal RELEASE. One transaction, approved publisher inputs and supported mappings only; arbitrary torrents refused. Automatic discovery remains intentionally disabled.
 
-**PASSED ≠ RELEASED; RELEASED ≠ IMPORTED.** Files below the scanner ceiling are not automatically supported by the stricter parser/package contract. Large and unsupported content stays held. See the [Gate case study](case-study-download-security-gate.md).
+The recorded clean resting state has zero torrents/transient payloads, restored Sonarr staging/release exclusion and Completed Download Handling OFF. Canonical media and Gate evidence remain. Failed first attempt, separately authorized recovery and fresh-approved success are preserved as distinct events.
+
+Earlier architecture/admission, >16 MiB fixtures, release safety, restart/recovery and disposable import qualification remain historical foundations. The unchanged scanner ceiling holds oversized content; no >2 GiB support is claimed. See the [Gate / NOVA Media case study](case-study-download-security-gate.md).
 
 ## Platform and access
 
@@ -64,12 +71,12 @@ The completed offline campaign left no test torrents or staging/release payloads
 
 | Component | Current evidence | Limit |
 |---|---|---|
-| Jellyfin | Application-state restore previously verified; playback service retained | No new request-to-Jellyfin pilot completed |
-| Jellyseerr | Existing request interface | Acquisition is deliberately disabled |
-| Sonarr | Library-only visibility; Completed Download Handling OFF | Read-only disposable copy design qualified; production transaction not yet applied |
-| Radarr | Library-only visibility; existing configuration preserved | Outside the first pilot |
+| Jellyfin | Owner-approved Gran Dillama import and delivery verified; existing media/history preserved | Delivery is not an autonomous or general catalogue acquisition claim |
+| Jellyseerr | Existing request interface retained | Accepted acquisition uses the installed owner workflow; automated discovery remains disabled |
+| Sonarr | Exact released-package import production-verified; library-only resting visibility; CDH OFF after cleanup | No staging visibility; temporary read-only exposure only after durable RELEASED |
+| Radarr | Existing configuration preserved | Acquisition DEFERRED; outside accepted Level 1 scope |
 | Prowlarr / Arr indexers | Disabled at the final checkpoint | No source or grab authorized by documentation |
-| qBittorrent | Attached to isolated staging/release; real completion and move exercised | Production admission qualified beyond 16 MiB; no Internet acquisition at the selected checkpoint |
+| qBittorrent | Real owner-approved Internet acquisition and controlled release verified; zero resting torrents | One supported transaction; personal APPROVE and RELEASE; arbitrary torrents refused |
 | Gluetun | Tunnel routing, forwarding synchronization and bounded tunnel-down blocking verified | No claim covering every failure mode |
 | Other media support services | Earlier runtime evidence retained | No new feature qualification in this campaign |
 
@@ -85,4 +92,4 @@ The completed offline campaign left no test torrents or staging/release payloads
 
 ## Current operational truth
 
-NOVA has a reconciled service foundation and a deployed Gate qualified through a controlled offline release. It has not yet restored normal Internet acquisition. Production admission and read-only release visibility design are qualified. The next step is the explicitly authorized single-item Sonarr/pilot transaction. Broader backup/restore and observability gaps remain separate work. See [Roadmap](roadmap.md).
+NOVA Media Level 1 is operational within approved attended publisher/mapping scope. The implementation campaign is complete for that scope; use and observe actual friction before optional expansion. Indexers/RSS/search stay disabled, Radarr deferred and Level 2 not enabled by policy. Broader platform backup/observability gaps remain separate. See [Roadmap](roadmap.md).

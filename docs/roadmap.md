@@ -2,33 +2,42 @@
 
 [Project overview](../README.md) · [Current state](current-state.md)
 
-Reconciled October 6, 2026 to the selected October 4 final-admission checkpoint. This is a dependency plan, not authorization to act.
+Reconciled October 6, 2026 to live owner-driven Level 1 production acceptance. This is a dependency plan, not authorization to act.
 
-## Completed
+## Complete within approved Level 1 scope
 
-- Reconciled service baseline and retained bounded boot-recovery evidence.
-- Gate inventory, identity-bound filename/type and media validation, real ClamAV and trusted Defender adapters.
-- Private source qualification/checkpoints; canonical 471-test suite and separate 26-test deployment/admission suite passed without skips.
-- Isolated production staging, separate release destination, consumer exclusion and Sonarr import hold.
-- Bounded production coordinator, persistent ledger, completion ingress and download-client move integration.
-- Offline production path through real PASSED and RELEASED, normal restart/replay checks, current VPN routing and bounded tunnel-down blocking.
+- Gate architecture, production deployment and authenticated admission.
+- Controlled release, moving-state safety and tested restart/recovery.
+- First Internet acquisition, Sonarr import and Jellyfin delivery.
+- Level 1 policy and production enablement.
+- Production-qualified emergency Level 0 rollback and Level 1 re-entry.
+- Installed owner-facing workflow and first live owner-driven production transaction.
+- Latest retained aggregate regression: **614 PASS, zero skips**.
 
-## Current
+## Current normal operation
 
-**Final Pilot Admission + Sonarr Import Boundary** completed through its owner-authorization boundary. Production admission, fixtures through 130 MB and read-only disposable import design are qualified.
+**LEVEL 1 — OWNER-ATTENDED MANUAL GATED**
 
-**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
 
-**READY PENDING OWNER AUTHORIZATION FOR SONARR/PILOT TRANSACTION.** The whole-file 16 MiB issue is safely resolved by pinned, read-only disk input. Production Sonarr release visibility remains DESIGN QUALIFIED / NOT YET APPLIED; CDH OFF; Internet acquisition NOT PERFORMED in this checkpoint. The unchanged ClamAV ceiling still holds oversized content.
+The owner personally approves every exact item and separately issues RELEASE only after real Gate validation. Approved publisher inputs and supported mappings only; arbitrary torrents refused; one active transaction; Gate mandatory; emergency stop available.
 
-## Next
+**INDEXERS DISABLED; RSS OFF; AUTOMATIC SEARCH OFF; RADARR DEFERRED; LEVEL 2 NOT ENABLED.** These controls are the approved policy, not an acceptance failure.
 
-1. Select one exact lawful/open sub-ceiling item and source, then obtain explicit owner authorization for the bounded transaction.
-2. Perform one manual acquisition; require real validation, durable RELEASED and final identity before exposing only that package read-only to Sonarr.
-3. Enable CDH at the appropriate authorized stage, observe actual import and media discovery, then restore safe acquisition controls.
-4. Qualify unattended operations and broader content scope separately. Gate architecture development is not the next prerequisite.
+## Current phase: USE AND OBSERVE
 
-Large or unsupported packages remain held. No automatic RSS/search, broad acquisition or retention deletion follows from the offline result.
+The approved implementation campaign is operationally complete. Use the existing mode and observe actual friction. This update starts no new engineering campaign.
+
+## Optional media expansions
+
+- Additional approved publisher/mapping support.
+- Subtitle/sidecar support.
+- Radarr qualification.
+- A >2 GiB media strategy; current support remains below the unchanged scanner ceiling.
+- UX improvements identified through actual use.
+- Level 2 automation only after a deliberate future owner decision.
+
+None is a blocker to accepted Level 1 operation.
 
 ## Later
 
@@ -38,4 +47,4 @@ Large or unsupported packages remain held. No automatic RSS/search, broad acquis
 - Evaluated read-only MCP and retrieval, then advanced home automation and voice under human control.
 - Nova-native memory, routing and action concepts after meaningful evaluation and permission tests.
 
-These remain separate from the current media objective. Safe bounded pilot work should not wait for every possible infrastructure improvement. See the [Gate case study](case-study-download-security-gate.md) for the qualification limits.
+These remain separate from accepted Level 1 operation. Prior qualification milestones remain in build history; optional improvements do not reopen the completed implementation campaign. See the [Gate case study](case-study-download-security-gate.md) for the qualification limits.

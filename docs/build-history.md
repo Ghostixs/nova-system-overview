@@ -87,6 +87,16 @@ That scanner-preflight campaign ended empty of test payloads, without production
 
 7. The later Final Pilot Admission + Sonarr Import Boundary campaign qualified production admission without the offline-only wrapper, resolved the whole-file 16 MiB cutoff through pinned read-only disk input, and released 6.6 MB, 25 MB and 130 MB production-shaped fixtures. Disposable Sonarr copied the 130 MB release read-only with source hash preserved. Retained suites: **471/471 Gate + 26/26 deployment**.
 
-**Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.** The production Sonarr transaction remains unapplied, CDH OFF and Internet acquisition NOT PERFORMED in the selected final-admission checkpoint. Documentation was reconciled October 6; no new runtime audit is claimed.
+At that October 4 historical final-admission checkpoint, production Sonarr application and Internet acquisition were still pending. The later completed milestones below supersede those current-state labels.
+
+8. Controlled Internet acquisition, first Sonarr import and Jellyfin delivery were subsequently verified. Level 1 policy, production enablement, emergency Level 0 rollback and Level 1 re-entry were qualified, followed by the installed owner-facing workflow.
+
+## October 6, 2026: first live owner-driven Level 1 transaction
+
+The owner used installed NOVA Media.cmd for Gran Dillama and personally issued fresh APPROVE and RELEASE. Production Gate validation, controlled release, Sonarr import, Jellyfin delivery and transient cleanup completed. Latest aggregate regression: **614 PASS, zero skips**.
+
+The three events remain separate: a first owner-approved attempt failed closed on startup readiness before downloading media; separately authorized recovery removed only its exact zero-byte metadata and restored Level 1 without acquisition or approval reuse; a NEW owner approval then completed the successful transaction. Existing media/playback history and failed-attempt evidence were preserved.
+
+**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.** Current phase: **USE AND OBSERVE**. Indexers/RSS/search remain disabled by policy; Radarr deferred and Level 2 not enabled. No autonomous acquisition or general publisher support is claimed.
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](case-study-download-security-gate.md). Earlier milestones above retain their original evidence dates.

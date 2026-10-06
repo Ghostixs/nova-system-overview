@@ -16,7 +16,7 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 ## Project status
 
-Latest Gate evidence: **October 4 final-admission checkpoint**, documentation reconciled **October 6, 2026**. Platform baseline reconciled September 24; unrelated service details retain their August 31 inspection scope.
+Latest media evidence: **October 6, 2026 — live owner-driven Level 1 production acceptance**. Platform baseline reconciled September 24; unrelated service details retain their August 31 inspection scope.
 
 The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
 
@@ -27,13 +27,13 @@ The technical evidence column records what was verified. The final column explai
 | Service access and navigation | **Working** | Homepage and Caddy passed direct and routed availability checks across the Windows/WSL boundary. | The main dashboard and service routes are reachable from the host environment. |
 | Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes. Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were running; dashboard, alert, and retention coverage still varies. | Nova can monitor the health of its main systems, though monitoring coverage is still growing. |
 | Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. | Home-automation services are available, while private household details remain unpublished. |
-| Media workflow | **Production admission and release boundary qualified** | Production-shaped fixtures through 130 MB reached RELEASED; read-only disposable import preserved source hash; 471 Gate + 26 deployment tests passed. | One owner-authorized controlled Internet pilot remains; production Sonarr visibility transaction is pending and CDH is OFF at this checkpoint. |
+| Media workflow | **Level 1 operational; live production accepted** | Owner used the installed operator interface for Gran Dillama; acquisition, Gate validation, release, Sonarr import, Jellyfin delivery and cleanup verified. Latest aggregate regression: 614 PASS, zero skips. | Owner-attended and publisher-restricted; APPROVE and post-validation RELEASE required for every item. Indexers/RSS/search disabled by policy; Radarr deferred; Level 2 not enabled. |
 | Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. | Nova has documented recovery options, but not every service yet has complete off-site backup and restore proof. |
 | AI experimentation | **Experimental** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. | The current AI interface can be tested, but advanced Nova intelligence is not a production capability yet. |
 | Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. | Nova's own software is being built but is not running as a live service yet. |
 | Advanced AI operations | **Planned** | RAG evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. | More advanced AI and tool-use capabilities are on the roadmap and have not been built yet. |
 
-## Recent engineering milestone: Download Security Gate
+## Recent engineering milestone: NOVA Media Level 1
 
 - Isolated staging keeps untrusted content away from media consumers.
 - Real filename/type, libmagic, FFprobe, ClamAV and Defender evidence bind to the same file identity.
@@ -41,8 +41,10 @@ The technical evidence column records what was verified. The final column explai
 - The download client moves content; the Gate verifies completion before release.
 - Production-shaped 6.6 MB, 25 MB and 130 MB fixtures reached RELEASED. **471 Gate + 26 deployment tests passed, zero skips.**
 - Production admission no longer depends on the offline-only wrapper. Pinned, read-only disk input resolves the earlier whole-file **16 MiB** constraint; existing parser resource limits and the scanner ceiling remain unchanged.
-- Disposable Sonarr copied a 130 MB released package from a read-only mount with source hash preserved. The production visibility transaction remains unapplied; CDH remains OFF.
-- **Production admission and release boundary qualified; one owner-authorized controlled Internet pilot remains.**
+- The read-only release-to-import contract progressed from disposable qualification to actual production Sonarr import and Jellyfin delivery. Temporary per-package exposure is withdrawn after use; CDH returns OFF.
+- **NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
+- **Live owner-driven acquisition, validation, release, import and Jellyfin delivery verified.**
+- The owner-facing interface abstracts WSL, containers, downloader and import operations while keeping Gate security authority independent. A failed startup attempt downloaded no media; separately authorized recovery did not reuse its approval.
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](docs/case-study-download-security-gate.md).
 
@@ -69,7 +71,7 @@ The project is also a practical response to common operational problems:
 - Grafana visualization, Loki logs, Promtail collection, Node Exporter, and Uptime Kuma
 - Production-validated, fail-closed post-logon convergence verification
 - Home Assistant for home-automation experimentation
-- Jellyfin-centered services with qualified production admission and a read-only release-to-import design; the controlled Internet pilot remains pending
+- Jellyfin-centered services with live owner-driven Level 1 acquisition, Gate validation, explicit release, import and cleanup verified
 - Vaultwarden for private credential management
 - Open WebUI as an AI experimentation interface
 - Git-based source control for engineering material
@@ -122,7 +124,7 @@ Nova is my personal systems engineering project focused on reliability, security
 
 ## Current limitations
 
-- Bounded production admission and read-only import design are qualified. Production Sonarr application, the controlled Internet pilot and unattended acquisition remain pending in the selected checkpoint.
+- Current media operation is attended Level 1 within approved publisher/mapping scope. Arbitrary downloads, automated discovery, Radarr, above-ceiling media and Level 2 remain outside the approved scope.
 
 - The private environment still has configuration and documentation drift to resolve.
 - Some services lack application-level health checks.
@@ -143,9 +145,9 @@ Planned AI workflows will be evaluated for answer quality, failure behavior, per
 
 ## Roadmap
 
-- **Completed:** service baseline, Gate source/runtime qualification, isolated staging/release, bounded production admission beyond 16 MiB and read-only disposable import contract.
-- **Current:** ready pending owner authorization for the exact Sonarr/pilot transaction, with acquisition disabled in the selected checkpoint.
-- **Next:** explicitly authorized single-item request-to-Jellyfin pilot, then unattended acquisition qualification.
+- **Completed:** Gate architecture/deployment/admission, release/moving safety, tested recovery, Internet acquisition, Sonarr/Jellyfin delivery, Level 1 policy/enablement, emergency rollback/re-entry, installed owner interface and first live owner transaction.
+- **Current:** **USE AND OBSERVE** in accepted **LEVEL 1 — OWNER-ATTENDED MANUAL GATED** mode.
+- **Optional future:** owner-requested publisher/mapping support, sidecars, Radarr, >2 GiB strategy and UX improvements. Level 2 needs a deliberate separate decision.
 - **Later:** broader recovery and observability coverage, supported content expansion, evaluated retrieval/MCP and home-automation capabilities.
 
 Read the complete [Roadmap](docs/roadmap.md).

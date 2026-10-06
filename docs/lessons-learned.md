@@ -70,4 +70,10 @@ The best runbook reduces the amount of private context someone needs before acti
 - **Synthetic evidence has a limit.** It is useful for denial/fault tests, but cannot authorize real production PASSED or release.
 - **Recovery needs acceptance criteria.** A normal restart, replay, interrupted move and power loss are distinct cases. Claim only the cases tested.
 
-These lessons are illustrated in the [Gate case study](case-study-download-security-gate.md).
+The accepted owner workflow adds three operating lessons:
+
+- **Keep security authority independent from UX.** A convenient interface coordinates existing trusted Gate checks; it cannot manufacture validator evidence.
+- **Do not reuse failed-transaction authorization.** Fail closed, recover within exact owner-approved scope, and require fresh approval for a new attempt.
+- **Accepted attended operation is a complete scope.** Disabled discovery and separate per-item decisions are intentional policy. Optional future autonomy is a new decision, not a missing Level 1 feature.
+
+These lessons are illustrated in the [Gate / NOVA Media case study](case-study-download-security-gate.md).
