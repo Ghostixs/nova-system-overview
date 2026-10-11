@@ -16,7 +16,7 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 ## Project status
 
-Latest media evidence: **October 6, 2026 — live owner-driven Level 1 production acceptance**. Platform baseline reconciled September 24; unrelated service details retain their August 31 inspection scope.
+Latest evidence: **October 11, 2026 — full media automation live and Nova AI memory core operational**. Owner-driven October 10 transition: the gated owner-attended flow was superseded by the owner-approved automated pipeline, and the Nova AI core (memory pipeline, daily synthesis, deep memory layers) went live. The Gate remains stopped and latched as retained historical evidence; revival or retirement is an open owner decision.
 
 The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
 
@@ -27,24 +27,21 @@ The technical evidence column records what was verified. The final column explai
 | Service access and navigation | **Working** | Homepage and Caddy passed direct and routed availability checks across the Windows/WSL boundary. | The main dashboard and service routes are reachable from the host environment. |
 | Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes. Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were running; dashboard, alert, and retention coverage still varies. | Nova can monitor the health of its main systems, though monitoring coverage is still growing. |
 | Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. | Home-automation services are available, while private household details remain unpublished. |
-| Media workflow | **Level 1 operational; live production accepted** | Owner used the installed operator interface for Gran Dillama; acquisition, Gate validation, release, Sonarr import, Jellyfin delivery and cleanup verified. Latest aggregate regression: 614 PASS, zero skips. | Owner-attended and publisher-restricted; APPROVE and post-validation RELEASE required for every item. Indexers/RSS/search disabled by policy; Radarr deferred; Level 2 not enabled. |
+| Media workflow | **Fully automated; live production** | October 10, 2026: the owner approved full automation and the entire chain ran unattended end-to-end — request interface → indexer search → movie/TV managers → VPN-bound download client → automatic import → media server. Six titles auto-imported in one day; deletion verified to remove files from disk; automatic re-acquisition verified. Seeding is preserved with ratio targets and no time cap. | Requests now resolve to completed media in the library without owner attendance. |
 | Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. | Nova has documented recovery options, but not every service yet has complete off-site backup and restore proof. |
-| AI experimentation | **Experimental** | Open WebUI was healthy at inspection. Production RAG, agent routing, MCP integration, and autonomous actions are not verified. | The current AI interface can be tested, but advanced Nova intelligence is not a production capability yet. |
-| Nova-native software | **In Development** | Nova Core and Nova Awareness source prototypes exist but are not deployed services. | Nova's own software is being built but is not running as a live service yet. |
-| Advanced AI operations | **Planned** | RAG evaluation, persistent AI memory, agent routing, MCP tools, and human-approved actions remain roadmap work. | More advanced AI and tool-use capabilities are on the roadmap and have not been built yet. |
+| Nova AI core | **Operational; verified live** | Owner declared October 11, 2026 that the personal assistant runs on a self-hosted agent runtime with a separately-billed open model. A daily loop collects deterministic facts at 07:00, an AI synthesis pass writes the morning brief + ranked attention queue at 07:15, and a Sunday weekly pass reviews the second brain. Five deep-memory layers run file-based and locally: an append-only event ledger (Chronicle), a fact-lifecycle store with supersede-never-delete (Codex), an entity index over the knowledge vault (Atlas), evidence-linked distilled patterns (Wisdom), and source-enforcement on every claim (Evidence). All verified with real runs; no external memory provider or cloud service is involved. | Nova has a working local memory system: it records what happened, keeps only verifiable current facts, and writes the owner a brief every morning. |
+| Nova-native software | **Deployed** | The memory-layer tools (ledger, fact lifecycle, entity index, pattern distillation, synthesis merger) run as guard-enforced, stdlib-only Python in the Linux environment; the dashboard serves the daily brief to intelligence cards via the local reverse proxy. | Nova's own software is now running as live services, not prototypes. |
+| Advanced AI operations | **Partial** | Persistent memory, daily/weekly consolidation, and evidence enforcement are live. Autonomous actions, external retrieval providers, and multi-step tool orchestration remain roadmap work. | Nova remembers and reports; it does not yet act on systems without the owner. |
 
-## Recent engineering milestone: NOVA Media Level 1
+## Recent engineering milestones
 
-- Isolated staging keeps untrusted content away from media consumers.
-- Real filename/type, libmagic, FFprobe, ClamAV and Defender evidence bind to the same file identity.
-- Validation, release and import are separate decisions: **PASSED ≠ RELEASED ≠ IMPORTED**.
-- The download client moves content; the Gate verifies completion before release.
-- Production-shaped 6.6 MB, 25 MB and 130 MB fixtures reached RELEASED. **471 Gate + 26 deployment tests passed, zero skips.**
-- Production admission no longer depends on the offline-only wrapper. Pinned, read-only disk input resolves the earlier whole-file **16 MiB** constraint; existing parser resource limits and the scanner ceiling remain unchanged.
-- The read-only release-to-import contract progressed from disposable qualification to actual production Sonarr import and Jellyfin delivery. Temporary per-package exposure is withdrawn after use; CDH returns OFF.
-- **NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
-- **Live owner-driven acquisition, validation, release, import and Jellyfin delivery verified.**
-- The owner-facing interface abstracts WSL, containers, downloader and import operations while keeping Gate security authority independent. A failed startup attempt downloaded no media; separately authorized recovery did not reuse its approval.
+### October 2026: full media automation (owner-approved)
+
+After the owner-driven Level 1 acceptance below, the owner chose full automation. The request interface, indexer search, movie/TV managers, VPN-bound download client, automatic import, and media server now run end-to-end without attendance. Verified: six titles auto-imported October 10; deletion from the media server removes files from disk; automatic re-acquisition works after deletion. Seeding is preserved (ratio target, no time cap) so the shared-indexer economy is respected. The Gate is stopped and latched as retained evidence — revival or retirement is an open owner decision.
+
+### October 2026: Nova AI core and deep memory
+
+The owner declared the personal assistant to be the self-hosted agent (chief of staff + memory core). The live system: deterministic facts pass (07:00 daily) → AI synthesis writes the morning brief and ranked attention queue (07:15) → served to dashboard intelligence cards; Sunday weekly review. Five file-based deep-memory layers, all guard-enforced and locally stored: Chronicle (append-only event ledger), Codex (fact lifecycle: current/uncertain/superseded/expired, supersede-never-delete), Atlas (entity index over the knowledge vault), Wisdom (evidence-linked patterns, advisory only), Evidence (every claim must carry a source; unsourced items refused at merge).
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](docs/case-study-download-security-gate.md).
 
@@ -124,16 +121,15 @@ Nova is my personal systems engineering project focused on reliability, security
 
 ## Current limitations
 
-- Current media operation is attended Level 1 within approved publisher/mapping scope. Arbitrary downloads, automated discovery, Radarr, above-ceiling media and Level 2 remain outside the approved scope.
-
+- Full media automation is live, but automation quality controls are still maturing: no formal regression suite runs on the automated path (the 614-test Gate suite belongs to the retired attended flow), and config-drift checks are periodic rather than continuous.
 - The private environment still has configuration and documentation drift to resolve.
 - Some services lack application-level health checks.
 - Observability targets are verified, but dashboard, alert, notification, and retention coverage is not uniform.
 - Backup coverage is uneven, and not every critical service has an off-host copy and isolated restore test.
 - The boot verifier observes and classifies convergence; it is not a general-purpose remediation engine.
 - Security hardening is ongoing. Privileged integrations and service exposure require continued review.
-- Nova Core and Nova Awareness are prototypes, not dependable platform services.
-- No production RAG, agent, MCP, or autonomous-action capability is claimed.
+- Nova AI operates read-mostly: it writes only its own guarded data files and a morning brief. It does not perform autonomous system actions; autonomous action and multi-step orchestration remain unbuilt.
+- No production RAG, external retrieval provider, MCP, or autonomous-action capability is claimed.
 
 ## Responsible AI and human control
 
@@ -145,10 +141,10 @@ Planned AI workflows will be evaluated for answer quality, failure behavior, per
 
 ## Roadmap
 
-- **Completed:** Gate architecture/deployment/admission, release/moving safety, tested recovery, Internet acquisition, Sonarr/Jellyfin delivery, Level 1 policy/enablement, emergency rollback/re-entry, installed owner interface and first live owner transaction.
-- **Current:** **USE AND OBSERVE** in accepted **LEVEL 1 — OWNER-ATTENDED MANUAL GATED** mode.
-- **Optional future:** owner-requested publisher/mapping support, sidecars, Radarr, >2 GiB strategy and UX improvements. Level 2 needs a deliberate separate decision.
-- **Later:** broader recovery and observability coverage, supported content expansion, evaluated retrieval/MCP and home-automation capabilities.
+- **Completed:** Gate architecture/deployment/admission, release/moving safety, tested recovery, Internet acquisition, Sonarr/Jellyfin delivery, Level 1 policy/enablement, emergency rollback/re-entry, installed owner interface, first live owner transaction, **owner-approved full media automation (October 2026)**, **Nova AI core with five-layer deep memory (October 2026)**.
+- **Current:** **full automation in operation** + **Nova AI daily memory loop** (facts → synthesis → dashboard, Sunday weekly review). Observing both; the Gate revival-or-retirement decision is the owner's.
+- **Next:** job-search tooling (owner's priority), Gate decision, Nova AI polish (wisdom refinement, voice tuning).
+- **Later:** broader recovery and observability coverage, evaluated retrieval providers and MCP, autonomous-action capability only after explicit permission design.
 
 Read the complete [Roadmap](docs/roadmap.md).
 

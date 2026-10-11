@@ -1,6 +1,6 @@
 # Current State
 
-Latest media evidence: **October 6, 2026 — live owner-driven Level 1 production acceptance**. This documentation update uses retained acceptance evidence; it is not a separate new runtime audit. The platform baseline was reconciled September 24. Non-Gate service tables below retain their August 31 scope and were not broadly re-audited for this update.
+Latest evidence: **October 11, 2026 — full media automation live; Nova AI memory core operational**. The October 10 owner decision superseded the attended Level 1 flow with full automation; the Gate is stopped and latched as retained evidence. This update records the automation verification and the Nova AI build/verification evidence.
 
 ## How to read this page
 
@@ -8,30 +8,39 @@ Latest media evidence: **October 6, 2026 — live owner-driven Level 1 productio
 
 No private addresses, hostnames, paths, domains, identifiers, credentials, or application data are included.
 
-## NOVA Media Level 1
+## Media pipeline: full automation (supersedes attended Level 1)
 
-**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
+**The owner approved full automation on October 10, 2026.** The complete chain ran unattended end-to-end: request interface → indexer search → movie/TV managers → VPN-bound download client → automatic import → media server.
 
-**Live owner-driven acquisition, validation, release, import and Jellyfin delivery verified.**
-
-| Status | Current accepted scope |
+| Status | Current scope |
 |---|---|
-| Mode | **LEVEL 1 — OWNER-ATTENDED MANUAL GATED** |
-| Owner workflow | **LIVE PRODUCTION ACCEPTED** through installed Windows operator interface |
-| Per-item APPROVE / post-validation RELEASE | **REQUIRED / REQUIRED** |
-| Gate security authority | **PRESERVED** |
-| Sonarr import / Jellyfin / cleanup | **VERIFIED** for the owner-approved Gran Dillama transaction |
-| Emergency stop | **PRODUCTION QUALIFIED** |
-| Latest regression | **614 PASS, zero skips**: 471 Gate + 26 deployment + 30 policy/stop + 8 import evidence + 79 owner workflow |
-| Indexers / RSS / automatic search | **DISABLED / OFF / OFF** |
-| Radarr / Level 2 | **DEFERRED / NOT ENABLED** |
-| Normal Level 1 use / current phase | **READY / USE AND OBSERVE** |
+| Mode | **FULL AUTOMATION (owner-approved)** |
+| Chain | Request interface → indexer → managers → VPN-bound client → auto-import → media server |
+| Verified | Six titles auto-imported October 10; deletion removes files from disk; automatic re-acquisition after deletion works |
+| Seeding | Ratio target with no time cap; completed downloads retained for seeding after import |
+| TV backlog | Resumed; 30+ queued items flowing |
+| Gate | **STOPPED AND LATCHED** — retained as historical evidence; revival or retirement is an open owner decision |
+| Regression | The 614-test Gate suite belongs to the retired attended flow; the automated path has no formal regression suite yet (stated limitation) |
 
-Approval applies only to the exact reviewed item. No acquisition precedes APPROVE; no release precedes genuine Gate PASSED and personal RELEASE. One transaction, approved publisher inputs and supported mappings only; arbitrary torrents refused. Automatic discovery remains intentionally disabled.
+The attended Gate flow, its 614 PASS / zero skips regression, and the owner-driven Gran Dillama transaction remain documented in the Gate case study as historical evidence. They describe a superseded operating mode, not current operation.
 
-The recorded clean resting state has zero torrents/transient payloads, restored Sonarr staging/release exclusion and Completed Download Handling OFF. Canonical media and Gate evidence remain. Failed first attempt, separately authorized recovery and fresh-approved success are preserved as distinct events.
+## Nova AI core
 
-Earlier architecture/admission, >16 MiB fixtures, release safety, restart/recovery and disposable import qualification remain historical foundations. The unchanged scanner ceiling holds oversized content; no >2 GiB support is claimed. See the [Gate / NOVA Media case study](case-study-download-security-gate.md).
+**The owner declared October 11, 2026: the personal assistant runs on a self-hosted agent runtime as chief of staff + memory core.**
+
+| Component | Status | Evidence |
+|---|---|---|
+| Daily facts pass | **Live** | Deterministic script writes a facts snapshot every morning (07:00 local); verified writes + archive rotation |
+| Daily synthesis | **Live** | AI session (separately-billed open model) writes the morning brief + ranked attention queue (07:15); merge is guard-enforced; verified output |
+| Dashboard surface | **Live** | Brief served to intelligence cards via the local reverse proxy; all cards verified returning data |
+| Chronicle (event ledger) | **Live** | Append-only JSONL; 23 events seeded (commits + decisions); events never edited, corrections are new events |
+| Codex (fact lifecycle) | **Live** | Facts carry current/uncertain/superseded/expired states; supersede-never-delete audit trail; human-readable sync into the knowledge vault |
+| Atlas (entity index) | **Live** | Deterministic scan of the knowledge vault; 77 notes → 67 entities |
+| Wisdom (patterns) | **Live** | Evidence-linked distilled patterns; advisory only, never auto-applied; distilled on the Sunday weekly pass |
+| Evidence enforcement | **Live** | Every attention item must carry a source; source-less items refused at merge (verified exit code) |
+| Weekly review | **Live** | Sunday pass: second-brain review + Atlas rebuild + Wisdom distill |
+
+All memory layers are file-based, guard-enforced (writes outside the designated data dirs are refused), stdlib-only, and stored locally. No external memory provider or cloud service is involved; model usage is a separately-billed open model, not the owner's subscription quota.
 
 ## Platform and access
 
@@ -71,12 +80,12 @@ Earlier architecture/admission, >16 MiB fixtures, release safety, restart/recove
 
 | Component | Current evidence | Limit |
 |---|---|---|
-| Jellyfin | Owner-approved Gran Dillama import and delivery verified; existing media/history preserved | Delivery is not an autonomous or general catalogue acquisition claim |
-| Jellyseerr | Existing request interface retained | Accepted acquisition uses the installed owner workflow; automated discovery remains disabled |
-| Sonarr | Exact released-package import production-verified; library-only resting visibility; CDH OFF after cleanup | No staging visibility; temporary read-only exposure only after durable RELEASED |
-| Radarr | Existing configuration preserved | Acquisition DEFERRED; outside accepted Level 1 scope |
-| Prowlarr / Arr indexers | Disabled at the final checkpoint | No source or grab authorized by documentation |
-| qBittorrent | Real owner-approved Internet acquisition and controlled release verified; zero resting torrents | One supported transaction; personal APPROVE and RELEASE; arbitrary torrents refused |
+| Jellyfin | Six titles auto-imported October 10; existing media/history preserved; deletion verified to remove files from disk | Delivery is an automated-pipeline claim scoped to the verified run |
+| Jellyseerr | Live request interface feeding the automated chain | Verified for the October 10 automation run; edge cases (partial seasons, quality overrides) not exhaustively tested |
+| Sonarr | Live TV manager; backlog resumed; imports verified | Verified for the automation run; long-term queue behavior observed, not stress-tested |
+| Radarr | Live movie manager; six auto-imports October 10 | Verified for the automation run |
+| Prowlarr / Arr indexers | Live indexer search feeding the automation | Indexer health verified by live search |
+| qBittorrent | VPN-bound acquisition verified; seeding preserved with ratio target and no time cap | No claim covering every failure mode |
 | Gluetun | Tunnel routing, forwarding synchronization and bounded tunnel-down blocking verified | No claim covering every failure mode |
 | Other media support services | Earlier runtime evidence retained | No new feature qualification in this campaign |
 
@@ -84,12 +93,17 @@ Earlier architecture/admission, >16 MiB fixtures, release safety, restart/recove
 
 | Component | Purpose | Status | Evidence used | Public-safe limitation |
 |---|---|---|---|---|
-| Nova Awareness | System-context prototype | **In Development** | Source and historical event records were inspected | Not deployed as a dependable service. |
-| Nova Core | Model-independent knowledge foundation | **In Development** | Early database and model source was inspected | Incomplete packages and no production deployment. |
+| Nova AI (agent core) | Personal assistant: chief of staff + memory core | **Live** | Owner-declared identity; daily facts→synthesis→dashboard loop verified; weekly review verified | Read-mostly: writes only guarded data files and the brief; no autonomous system actions |
+| Chronicle | Append-only event ledger | **Live** | 23 events seeded; append-only behavior verified | Local file storage; no external replication |
+| Codex | Fact lifecycle store | **Live** | current/uncertain/superseded/expired states verified with supersession audit trail | Local file storage; human sync into knowledge vault |
+| Atlas | Entity index over knowledge vault | **Live** | 77 notes → 67 entities verified | Local file storage |
+| Wisdom | Evidence-linked patterns | **Live** | Distilled entries verified; advisory-only rule enforced in prompts | Pattern quality depends on event volume |
+| Nova Awareness | System-context prototype | **Historical** | Source and historical event records were inspected | Superseded by the live facts/synthesis pipeline |
+| Nova Core | Model-independent knowledge foundation | **Historical** | Early database and model source was inspected | Superseded by the live memory layers |
 | RAG-backed memory | Retrieval-supported personal memory | **Planned** | Design material only | No working embedding or retrieval pipeline is verified. |
 | Agent routing and MCP | Model and tool coordination | **Planned** | Roadmap material only | No production router or completed MCP integration is verified. |
 | Human-approved AI actions | Controlled automation | **Planned** | Safety principle and roadmap only | Approval, permissions, logging, rollback, and evaluation must be designed first. |
 
 ## Current operational truth
 
-NOVA Media Level 1 is operational within approved attended publisher/mapping scope. The implementation campaign is complete for that scope; use and observe actual friction before optional expansion. Indexers/RSS/search stay disabled, Radarr deferred and Level 2 not enabled by policy. Broader platform backup/observability gaps remain separate. See [Roadmap](roadmap.md).
+Full media automation is live (owner-approved October 10) and the Nova AI memory core is operational (verified October 10-11). The attended Gate flow is superseded and the Gate is stopped/latched as retained evidence — revival or retirement is an open owner decision. The automation path has no formal regression suite yet; backup/observability gaps remain separate. See [Roadmap](roadmap.md).

@@ -97,6 +97,23 @@ The owner used installed NOVA Media.cmd for Gran Dillama and personally issued f
 
 The three events remain separate: a first owner-approved attempt failed closed on startup readiness before downloading media; separately authorized recovery removed only its exact zero-byte metadata and restored Level 1 without acquisition or approval reuse; a NEW owner approval then completed the successful transaction. Existing media/playback history and failed-attempt evidence were preserved.
 
-**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.** Current phase: **USE AND OBSERVE**. Indexers/RSS/search remain disabled by policy; Radarr deferred and Level 2 not enabled. No autonomous acquisition or general publisher support is claimed.
+**NOVA Media Level 1 was operational in owner-attended, publisher-restricted gated mode until the owner approved full automation on October 10, 2026.** The Gate is now stopped and latched as retained historical evidence. Current phase: **OBSERVE BOTH LANES** (full media automation + Nova AI memory loop).
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](case-study-download-security-gate.md). Earlier milestones above retain their original evidence dates.
+
+## October 10, 2026: owner-approved full media automation
+
+The owner chose full automation over the attended Gate flow. Verified the same day: the complete chain ran unattended end-to-end (request interface → indexer search → movie/TV managers → VPN-bound download client → automatic import → media server); six titles auto-imported; deletion from the media server removes files from disk; automatic re-acquisition works after deletion; seeding preserved with a ratio target and no time cap; the TV backlog resumed.
+
+## October 10-11, 2026: Nova AI core and five-layer deep memory
+
+The owner declared the personal assistant to be the self-hosted agent (chief of staff + memory core), running on a separately-billed open model rather than the owner's subscription quota. Built and verified:
+
+- Daily loop: deterministic facts pass (07:00) → AI synthesis writes the morning brief and ranked attention queue (07:15, guard-enforced merge) → dashboard intelligence cards; Sunday weekly review (second-brain review + Atlas rebuild + Wisdom distill).
+- **Chronicle**: append-only event ledger; 23 events seeded (git commits backfilled + decisions/changes); events never edited — corrections are new events.
+- **Codex**: fact lifecycle store (current/uncertain/superseded/expired); supersede-never-delete audit trail; human-readable sync into the knowledge vault.
+- **Atlas**: deterministic entity index over the knowledge vault (77 notes → 67 entities).
+- **Wisdom**: evidence-linked distilled patterns from the Chronicle; advisory only, never auto-applied.
+- **Evidence enforcement**: every attention item must carry a source; source-less items are refused at merge time (verified exit code).
+
+All layers file-based, guard-enforced, stdlib-only, stored locally. No external memory provider or cloud service involved.

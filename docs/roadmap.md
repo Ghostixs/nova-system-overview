@@ -2,9 +2,9 @@
 
 [Project overview](../README.md) · [Current state](current-state.md)
 
-Reconciled October 6, 2026 to live owner-driven Level 1 production acceptance. This is a dependency plan, not authorization to act.
+Reconciled October 11, 2026 to full media automation and the live Nova AI memory core. This is a dependency plan, not authorization to act.
 
-## Complete within approved Level 1 scope
+## Complete and verified
 
 - Gate architecture, production deployment and authenticated admission.
 - Controlled release, moving-state safety and tested restart/recovery.
@@ -12,39 +12,34 @@ Reconciled October 6, 2026 to live owner-driven Level 1 production acceptance. T
 - Level 1 policy and production enablement.
 - Production-qualified emergency Level 0 rollback and Level 1 re-entry.
 - Installed owner-facing workflow and first live owner-driven production transaction.
-- Latest retained aggregate regression: **614 PASS, zero skips**.
+- Latest retained aggregate regression for the attended flow: **614 PASS, zero skips**.
+- **Full media automation (owner-approved October 10, 2026):** request interface → indexer search → managers → VPN-bound client → auto-import → media server. Six titles auto-imported; deletion and re-acquisition verified; seeding preserved.
+- **Nova AI core (owner-declared October 11, 2026):** daily facts pass → daily AI synthesis (morning brief + attention queue) → dashboard; Sunday weekly review. Five deep-memory layers live: Chronicle, Codex, Atlas, Wisdom, Evidence enforcement.
 
 ## Current normal operation
 
-**LEVEL 1 — OWNER-ATTENDED MANUAL GATED**
+**FULL AUTOMATION (media)** + **NOVA AI DAILY MEMORY LOOP (assistant)**.
 
-**NOVA Media Level 1 is operational in owner-attended, publisher-restricted gated mode.**
+The media chain runs unattended. Nova AI writes the morning brief every day at 07:15 and reviews weekly. The Gate is stopped and latched as retained historical evidence.
 
-The owner personally approves every exact item and separately issues RELEASE only after real Gate validation. Approved publisher inputs and supported mappings only; arbitrary torrents refused; one active transaction; Gate mandatory; emergency stop available.
+**GATE REVIVAL OR RETIREMENT IS AN OPEN OWNER DECISION.** Revival requires fresh scanner definitions and re-pinning before any re-enablement; retirement keeps the evidence and audit chain intact.
 
-**INDEXERS DISABLED; RSS OFF; AUTOMATIC SEARCH OFF; RADARR DEFERRED; LEVEL 2 NOT ENABLED.** These controls are the approved policy, not an acceptance failure.
+## Current phase: OBSERVE BOTH LANES
 
-## Current phase: USE AND OBSERVE
+Both lanes are live and verified. Observe real friction: media edge cases (partial seasons, quality overrides), brief quality over days, memory-layer growth. The next engineering lane is the owner's job-search tooling.
 
-The approved implementation campaign is operationally complete. Use the existing mode and observe actual friction. This update starts no new engineering campaign.
+## Next lanes
 
-## Optional media expansions
-
-- Additional approved publisher/mapping support.
-- Subtitle/sidecar support.
-- Radarr qualification.
-- A >2 GiB media strategy; current support remains below the unchanged scanner ceiling.
-- UX improvements identified through actual use.
-- Level 2 automation only after a deliberate future owner decision.
-
-None is a blocker to accepted Level 1 operation.
+- **Job-search tooling** (owner priority): requirements → design → build.
+- **Gate decision**: retire or revive (see above).
+- **Nova AI polish**: wisdom refinement as the Chronicle grows, brief voice tuning, remaining placeholder cards on the dashboard.
 
 ## Later
 
 - Broader application restore and independent recovery coverage.
 - More complete health checks, alerts, provisioning and observability retention.
-- Separately qualified parser sizes, multifile/sidecar support and large-media policy where justified.
-- Evaluated read-only MCP and retrieval, then advanced home automation and voice under human control.
-- Nova-native memory, routing and action concepts after meaningful evaluation and permission tests.
+- A formal regression suite for the automated media path.
+- Evaluated read-only MCP and retrieval providers, then advanced home automation and voice under human control.
+- Autonomous AI actions only after explicit permission, logging, rollback, and evaluation design.
 
-These remain separate from accepted Level 1 operation. Prior qualification milestones remain in build history; optional improvements do not reopen the completed implementation campaign. See the [Gate case study](case-study-download-security-gate.md) for the qualification limits.
+Prior qualification milestones remain in build history. See the [Gate case study](case-study-download-security-gate.md) for the qualification limits of the superseded attended flow.
