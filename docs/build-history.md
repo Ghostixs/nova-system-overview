@@ -97,7 +97,7 @@ The owner used installed NOVA Media.cmd for Gran Dillama and personally issued f
 
 The three events remain separate: a first owner-approved attempt failed closed on startup readiness before downloading media; separately authorized recovery removed only its exact zero-byte metadata and restored Level 1 without acquisition or approval reuse; a NEW owner approval then completed the successful transaction. Existing media/playback history and failed-attempt evidence were preserved.
 
-**NOVA Media Level 1 was operational in owner-attended, publisher-restricted gated mode until the owner approved full automation on October 10, 2026.** The Gate is now stopped and latched as retained historical evidence. Current phase: **OBSERVE BOTH LANES** (full media automation + Nova AI memory loop).
+**NOVA Media Level 1 was operational in owner-attended, publisher-restricted gated mode until the owner approved full automation on October 10, 2026.** The Gate is now stopped and latched as retained historical evidence, and on October 11, 2026 the owner chose **RETIREMENT**: service stays stopped, evidence and audit chain retained in place, no revival campaign planned. Current phase: **OBSERVE BOTH LANES** (full media automation + Nova AI memory loop).
 
 Read [Building a Fail-Closed Media Acquisition Pipeline](case-study-download-security-gate.md). Earlier milestones above retain their original evidence dates.
 

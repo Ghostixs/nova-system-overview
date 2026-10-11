@@ -19,7 +19,7 @@ No private addresses, hostnames, paths, domains, identifiers, credentials, or ap
 | Verified | Six titles auto-imported October 10; deletion removes files from disk; automatic re-acquisition after deletion works |
 | Seeding | Ratio target with no time cap; completed downloads retained for seeding after import |
 | TV backlog | Resumed; 30+ queued items flowing |
-| Gate | **STOPPED AND LATCHED** — retained as historical evidence; revival or retirement is an open owner decision |
+| Gate | **RETIRED (owner decision 2026-10-11)** — service stays stopped; evidence and audit chain retained in place the owner chose RETIREMENT on October 11, 2026 (evidence retained) |
 | Regression | The 614-test Gate suite belongs to the retired attended flow; the automated path has no formal regression suite yet (stated limitation) |
 
 The attended Gate flow, its 614 PASS / zero skips regression, and the owner-driven Gran Dillama transaction remain documented in the Gate case study as historical evidence. They describe a superseded operating mode, not current operation.
@@ -106,4 +106,4 @@ All memory layers are file-based, guard-enforced (writes outside the designated 
 
 ## Current operational truth
 
-Full media automation is live (owner-approved October 10) and the Nova AI memory core is operational (verified October 10-11). The attended Gate flow is superseded and the Gate is stopped/latched as retained evidence — revival or retirement is an open owner decision. The automation path has no formal regression suite yet; backup/observability gaps remain separate. See [Roadmap](roadmap.md).
+Full media automation is live (owner-approved October 10) and the Nova AI memory core is operational (verified October 10-11). The attended Gate flow is superseded and the Gate is RETIRED (owner decision 2026-10-11) — the owner chose RETIREMENT on October 11, 2026 (evidence retained). The automation path has no formal regression suite yet; backup/observability gaps remain separate. See [Roadmap](roadmap.md).

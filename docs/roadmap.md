@@ -31,7 +31,7 @@ Both lanes are live and verified. Observe real friction: media edge cases (parti
 ## Next lanes
 
 - **Job-search tooling** (owner priority): requirements → design → build.
-- **Gate decision**: retire or revive (see above).
+- ~~Gate decision~~ — **RESOLVED 2026-10-11: retired** (evidence retained).
 - **Nova AI polish**: wisdom refinement as the Chronicle grows, brief voice tuning, remaining placeholder cards on the dashboard.
 
 ## Later

@@ -16,7 +16,7 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 ## Project status
 
-Latest evidence: **October 11, 2026 — full media automation live and Nova AI memory core operational**. Owner-driven October 10 transition: the gated owner-attended flow was superseded by the owner-approved automated pipeline, and the Nova AI core (memory pipeline, daily synthesis, deep memory layers) went live. The Gate remains stopped and latched as retained historical evidence; revival or retirement is an open owner decision.
+Latest evidence: **October 11, 2026 — full media automation live and Nova AI memory core operational**. Owner-driven October 10 transition: the gated owner-attended flow was superseded by the owner-approved automated pipeline, and the Nova AI core (memory pipeline, daily synthesis, deep memory layers) went live. The Gate was RETIRED by owner decision on October 11, 2026; service stays stopped and evidence is retained. the owner chose RETIREMENT on October 11, 2026 (evidence retained).
 
 The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
 
@@ -37,7 +37,7 @@ The technical evidence column records what was verified. The final column explai
 
 ### October 2026: full media automation (owner-approved)
 
-After the owner-driven Level 1 acceptance below, the owner chose full automation. The request interface, indexer search, movie/TV managers, VPN-bound download client, automatic import, and media server now run end-to-end without attendance. Verified: six titles auto-imported October 10; deletion from the media server removes files from disk; automatic re-acquisition works after deletion. Seeding is preserved (ratio target, no time cap) so the shared-indexer economy is respected. The Gate is stopped and latched as retained evidence — revival or retirement is an open owner decision.
+After the owner-driven Level 1 acceptance below, the owner chose full automation. The request interface, indexer search, movie/TV managers, VPN-bound download client, automatic import, and media server now run end-to-end without attendance. Verified: six titles auto-imported October 10; deletion from the media server removes files from disk; automatic re-acquisition works after deletion. Seeding is preserved (ratio target, no time cap) so the shared-indexer economy is respected. The Gate was RETIRED by owner decision on October 11, 2026 — the owner chose RETIREMENT on October 11, 2026 (evidence retained).
 
 ### October 2026: Nova AI core and deep memory
 
