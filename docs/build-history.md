@@ -117,3 +117,17 @@ The owner declared the personal assistant to be the self-hosted agent (chief of 
 - **Evidence enforcement**: every attention item must carry a source; source-less items are refused at merge time (verified exit code).
 
 All layers file-based, guard-enforced, stdlib-only, stored locally. No external memory provider or cloud service involved.
+
+## October 15-16, 2026: media client experience
+
+The automated pipeline got a product layer, applied entirely through the server API and verified against live state:
+
+- **Skip intro/credits**: audio-fingerprint analyzer writing into the native media-segment API; daily off-peak schedule; skip buttons verified active in the client.
+- **Scrub previews and chapter images**: native trickplay and chapter-image extraction enabled per library; generation verified complete.
+- **Hover trailers**: diagnosed that the library had zero provider IDs (no metadata database links at all), wired a validated metadata API key, and discovered that only serial per-item replace-all refreshes re-identify items (bulk-queued refreshes silently no-op). Result: all films identified; 24 of 29 films and 18 of 20 series carry trailer links.
+- **Subtitles**: always-on English at the user-policy level, backed by a quality-scored automated subtitle pipeline (default-on for all media, text-format upgrades, six-hour schedule).
+- **Recommendation layer**: scrobble history feeds three virtual shelves (50 movie + 50 show recommendations browsable in-app, plus a next-seasons shelf); a privacy-first local recommendation engine and a ratings/diary plugin installed; the scrobble provider excludes the virtual shelves so browsing them never pollutes watch history.
+- **Playback analytics**: analytics service deployed (app plus its own database), local-only.
+- **Dashboard and notifications**: continue-watching and recently-added cards live on the dashboard; new-media notifications wired to the owner's chat surface.
+
+Read [Engineering a Streaming Experience on a Self-Hosted Media Stack](case-study-media-experience.md).

@@ -16,7 +16,7 @@ This repository is a security-sanitized portfolio and case study. It explains th
 
 ## Project status
 
-Latest evidence: **October 11, 2026 — full media automation live and Nova AI memory core operational**. Owner-driven October 10 transition: the gated owner-attended flow was superseded by the owner-approved automated pipeline, and the Nova AI core (memory pipeline, daily synthesis, deep memory layers) went live. The Gate was RETIRED by owner decision on October 11, 2026; service stays stopped and evidence is retained. the owner chose RETIREMENT on October 11, 2026 (evidence retained).
+Latest evidence: **October 16, 2026 — media client experience shipped and media analytics live**. This update adds the media experience engineering pass (skip intro/credits, scrub previews, hover trailers, always-on subtitles, a three-shelf recommendation layer, playback analytics, dashboard media cards, and new-media notifications) on top of the verified full media automation and the Nova AI memory core. The Gate was retired by owner decision on October 11, 2026; the service stays stopped and the evidence is retained.
 
 The technical evidence column records what was verified. The final column explains the practical meaning without changing the status or its limitations.
 
@@ -28,6 +28,8 @@ The technical evidence column records what was verified. The final column explai
 | Observability | **Working foundation** | Prometheus verified three authoritative host/exporter target classes. Grafana, Loki, Promtail, Node Exporter, and Uptime Kuma were running; dashboard, alert, and retention coverage still varies. | Nova can monitor the health of its main systems, though monitoring coverage is still growing. |
 | Home automation | **Working** | Home Assistant was running. Internal entities, locations, and automations remain private. | Home-automation services are available, while private household details remain unpublished. |
 | Media workflow | **Fully automated; live production** | October 10, 2026: the owner approved full automation and the entire chain ran unattended end-to-end — request interface → indexer search → movie/TV managers → VPN-bound download client → automatic import → media server. Six titles auto-imported in one day; deletion verified to remove files from disk; automatic re-acquisition verified. Seeding is preserved with ratio targets and no time cap. | Requests now resolve to completed media in the library without owner attendance. |
+| Media client experience | **Live in production** | October 15-16, 2026: skip-intro/credits via audio fingerprinting into the native media-segment API; trickplay scrub previews and chapter images enabled per library; hover trailer previews after a full library identification pass (all films identified, 24 of 29 with trailer links, 18 of 20 series); subtitles always-on with an automated quality-scored subtitle pipeline; a three-shelf recommendation layer from scrobble history (50 movie + 50 show recommendations browsable in-app) plus a privacy-first local engine and a ratings/diary plugin; playback analytics dashboard; continue-watching and recently-added dashboard cards; new-media notifications. | The media server now behaves like a streaming product, not a file list. |
+| Media analytics | **Working** | A playback-analytics service (app plus its own database) ingests the server's playback-reporting data: watch time, most-played titles, device mix, live sessions. Local-only exposure. | Nova can now answer "what is actually being watched" from its own data. |
 | Backup and recovery | **Partial** | Recovery artifacts, controlled repair procedures, and boot verification exist. Off-host coverage and isolated restore testing are not complete for every service. | Nova has documented recovery options, but not every service yet has complete off-site backup and restore proof. |
 | Nova AI core | **Operational; verified live** | Owner declared October 11, 2026 that the personal assistant runs on a self-hosted agent runtime with a separately-billed open model. A daily loop collects deterministic facts at 07:00, an AI synthesis pass writes the morning brief + ranked attention queue at 07:15, and a Sunday weekly pass reviews the second brain. Five deep-memory layers run file-based and locally: an append-only event ledger (Chronicle), a fact-lifecycle store with supersede-never-delete (Codex), an entity index over the knowledge vault (Atlas), evidence-linked distilled patterns (Wisdom), and source-enforcement on every claim (Evidence). All verified with real runs; no external memory provider or cloud service is involved. | Nova has a working local memory system: it records what happened, keeps only verifiable current facts, and writes the owner a brief every morning. |
 | Nova-native software | **Deployed** | The memory-layer tools (ledger, fact lifecycle, entity index, pattern distillation, synthesis merger) run as guard-enforced, stdlib-only Python in the Linux environment; the dashboard serves the daily brief to intelligence cards via the local reverse proxy. | Nova's own software is now running as live services, not prototypes. |
@@ -37,7 +39,13 @@ The technical evidence column records what was verified. The final column explai
 
 ### October 2026: full media automation (owner-approved)
 
-After the owner-driven Level 1 acceptance below, the owner chose full automation. The request interface, indexer search, movie/TV managers, VPN-bound download client, automatic import, and media server now run end-to-end without attendance. Verified: six titles auto-imported October 10; deletion from the media server removes files from disk; automatic re-acquisition works after deletion. Seeding is preserved (ratio target, no time cap) so the shared-indexer economy is respected. The Gate was RETIRED by owner decision on October 11, 2026 — the owner chose RETIREMENT on October 11, 2026 (evidence retained).
+After the owner-driven Level 1 acceptance below, the owner chose full automation. The request interface, indexer search, movie/TV managers, VPN-bound download client, automatic import, and media server now run end-to-end without attendance. Verified: six titles auto-imported October 10; deletion from the media server removes files from disk; automatic re-acquisition works after deletion. Seeding is preserved (ratio target, no time cap) so the shared-indexer economy is respected. The Gate was retired by owner decision on October 11, 2026; the service stays stopped and the evidence is retained.
+
+### October 2026: media client experience
+
+The automated pipeline got a product layer. Skip-intro/credits through audio fingerprinting into the native media-segment API; trickplay scrub previews and chapter images; hover trailer previews after diagnosing and fixing a library with zero provider IDs (serial per-item re-identification, 24 of 29 films and 18 of 20 series now carry trailer links); always-on English subtitles backed by an automated quality-scored subtitle pipeline; a three-shelf recommendation layer from scrobble history plus a privacy-first local engine; a playback analytics service; continue-watching and recently-added dashboard cards; and new-media notifications. Every change was applied through the server API, scripted, and verified against live state.
+
+Read [Engineering a Streaming Experience on a Self-Hosted Media Stack](docs/case-study-media-experience.md).
 
 ### October 2026: Nova AI core and deep memory
 
@@ -68,7 +76,7 @@ The project is also a practical response to common operational problems:
 - Grafana visualization, Loki logs, Promtail collection, Node Exporter, and Uptime Kuma
 - Production-validated, fail-closed post-logon convergence verification
 - Home Assistant for home-automation experimentation
-- Jellyfin-centered services with live owner-driven Level 1 acquisition, Gate validation, explicit release, import and cleanup verified
+- Jellyfin-centered services with a fully automated acquisition pipeline and a product-grade client experience (skip intro/credits, trickplay scrub previews, hover trailers, always-on subtitles, scrobble-based recommendation shelves, playback analytics)
 - Vaultwarden for private credential management
 - Open WebUI as an AI experimentation interface
 - Git-based source control for engineering material
@@ -101,6 +109,8 @@ Nova is my personal systems engineering project focused on reliability, security
 | Interfaces | Homepage, Portainer, Open WebUI |
 | Home automation | Home Assistant |
 | Media operations | Jellyfin, Jellyseerr, Sonarr, Radarr, Prowlarr, Bazarr, qBittorrent, Gluetun, Recyclarr, FlareSolverr |
+| Media client experience | Intro Skipper (audio fingerprinting), native media-segment API, trickplay, chapter images, HoverTrailer, TMDb identification, Trakt scrobbling, JellyNext recommendation shelves, LocalRecs, StarTrack, Skin Manager, Discord notifications |
+| Media analytics | Jellystat, Postgres |
 | Download validation | Python, SQLite, Bubblewrap, libmagic, FFprobe, ClamAV, Microsoft Defender |
 | Documentation | Markdown, Mermaid, Obsidian, operational runbooks |
 | AI roadmap | Retrieval evaluation, human review, model routing concepts, MCP concepts |
@@ -118,6 +128,8 @@ Nova is my personal systems engineering project focused on reliability, security
 - Used repeated real cold boots to isolate Docker, VPN, proxy, and telemetry timing races
 - Built operational trackers, verification queues, recovery records, and public-safe architecture maps
 - Separated observed evidence from assumptions, prototypes, and roadmap ideas
+- Turned a bare media server into a streaming product: skip intro/credits, scrub previews, hover trailers (after diagnosing a library with zero provider IDs), always-on quality-scored subtitles, scrobble-based recommendation shelves, playback analytics, and dashboard media cards, all applied through the server API and verified against live state
+- Debugged silent API failures by reading the system's actual state: bulk-queued metadata refreshes that no-op, catalog installs that return success without installing, and plugin path requirements that only exist in source code
 
 ## Current limitations
 
@@ -141,16 +153,16 @@ Planned AI workflows will be evaluated for answer quality, failure behavior, per
 
 ## Roadmap
 
-- **Completed:** Gate architecture/deployment/admission, release/moving safety, tested recovery, Internet acquisition, Sonarr/Jellyfin delivery, Level 1 policy/enablement, emergency rollback/re-entry, installed owner interface, first live owner transaction, **owner-approved full media automation (October 2026)**, **Nova AI core with five-layer deep memory (October 2026)**.
-- **Current:** **full automation in operation** + **Nova AI daily memory loop** (facts → synthesis → dashboard, Sunday weekly review). Observing both; the Gate revival-or-retirement decision is the owner's.
-- **Next:** job-search tooling (owner's priority), Gate decision, Nova AI polish (wisdom refinement, voice tuning).
+- **Completed:** Gate architecture/deployment/admission, release/moving safety, tested recovery, Internet acquisition, Sonarr/Jellyfin delivery, Level 1 policy/enablement, emergency rollback/re-entry, installed owner interface, first live owner transaction, **owner-approved full media automation (October 2026)**, **Nova AI core with five-layer deep memory (October 2026)**, **media client experience (October 2026: skip intro/credits, scrub previews, hover trailers, subtitles, recommendation shelves, analytics, dashboard cards, notifications)**.
+- **Current:** **full automation in operation** + **Nova AI daily memory loop** (facts → synthesis → dashboard, Sunday weekly review) + **media experience in use**. Observing all three.
+- **Next:** job-search tooling (owner's priority), Nova AI polish (wisdom refinement, voice tuning).
 - **Later:** broader recovery and observability coverage, evaluated retrieval providers and MCP, autonomous-action capability only after explicit permission design.
 
 Read the complete [Roadmap](docs/roadmap.md).
 
 ## Documentation
 
-For a concise interview walkthrough: [Gate case study](docs/case-study-download-security-gate.md) -> [Architecture](docs/architecture.md) -> [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) -> [Current state](docs/current-state.md) -> [Roadmap](docs/roadmap.md).
+For a concise interview walkthrough: [Media experience case study](docs/case-study-media-experience.md) -> [Gate case study](docs/case-study-download-security-gate.md) -> [Architecture](docs/architecture.md) -> [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) -> [Current state](docs/current-state.md) -> [Roadmap](docs/roadmap.md).
 
 | Document | Purpose |
 |---|---|
@@ -161,6 +173,7 @@ For a concise interview walkthrough: [Gate case study](docs/case-study-download-
 | [Operations and recovery](docs/operations-and-recovery.md) | Change safety, backups, boot verification, and recovery method |
 | [Security and privacy](docs/security-and-privacy.md) | Publication boundaries and security posture |
 | [Lessons learned](docs/lessons-learned.md) | Practical technical and operational takeaways |
+| [Media experience case study](docs/case-study-media-experience.md) | Turning a working pipeline into a streaming product: skip intro/credits, scrub previews, hover trailers, subtitles, recommendation shelves, analytics |
 | [Download Security Gate case study](docs/case-study-download-security-gate.md) | Isolation, state machines, real validation, asynchronous release and bounded recovery |
 | [Boot Recovery V1 case study](docs/case-study-boot-recovery.md) | Bounded post-logon convergence across Windows, WSL2, Docker, VPN, proxy, and telemetry |
 | [qBittorrent recovery case study](docs/case-study-qbittorrent-recovery.md) | Evidence-led diagnosis and minimal repair |

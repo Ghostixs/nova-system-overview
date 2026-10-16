@@ -2,7 +2,7 @@
 
 [Project overview](../README.md) · [Current state](current-state.md)
 
-Reconciled October 11, 2026 to full media automation and the live Nova AI memory core. This is a dependency plan, not authorization to act.
+Reconciled October 16, 2026 to full media automation, the media client experience, and the live Nova AI memory core. This is a dependency plan, not authorization to act.
 
 ## Complete and verified
 
@@ -15,18 +15,19 @@ Reconciled October 11, 2026 to full media automation and the live Nova AI memory
 - Latest retained aggregate regression for the attended flow: **614 PASS, zero skips**.
 - **Full media automation (owner-approved October 10, 2026):** request interface → indexer search → managers → VPN-bound client → auto-import → media server. Six titles auto-imported; deletion and re-acquisition verified; seeding preserved.
 - **Nova AI core (owner-declared October 11, 2026):** daily facts pass → daily AI synthesis (morning brief + attention queue) → dashboard; Sunday weekly review. Five deep-memory layers live: Chronicle, Codex, Atlas, Wisdom, Evidence enforcement.
+- **Media client experience (October 15-16, 2026):** skip intro/credits via audio fingerprinting into the native media-segment API; trickplay scrub previews and chapter images; hover trailers after a full library identification pass; always-on quality-scored subtitles; three-shelf recommendation layer from scrobble history plus a privacy-first local engine; playback analytics; dashboard media cards; new-media notifications.
 
 ## Current normal operation
 
-**FULL AUTOMATION (media)** + **NOVA AI DAILY MEMORY LOOP (assistant)**.
+**FULL AUTOMATION (media)** + **MEDIA EXPERIENCE IN USE** + **NOVA AI DAILY MEMORY LOOP (assistant)**.
 
-The media chain runs unattended. Nova AI writes the morning brief every day at 07:15 and reviews weekly. The Gate is stopped and latched as retained historical evidence.
+The media chain runs unattended, the client experience (skip, previews, trailers, subtitles, recommendation shelves, analytics) is live, and Nova AI writes the morning brief every day at 07:15 and reviews weekly. The Gate is stopped and latched as retained historical evidence.
 
-**GATE REVIVAL OR RETIREMENT IS AN OPEN OWNER DECISION.** Revival requires fresh scanner definitions and re-pinning before any re-enablement; retirement keeps the evidence and audit chain intact.
+**GATE: RETIRED (owner decision 2026-10-11).** The service stays stopped; evidence and the audit chain are retained in place. Any future revival would require fresh scanner definitions and re-pinning before re-enablement.
 
-## Current phase: OBSERVE BOTH LANES
+## Current phase: OBSERVE THE LIVE LANES
 
-Both lanes are live and verified. Observe real friction: media edge cases (partial seasons, quality overrides), brief quality over days, memory-layer growth. The next engineering lane is the owner's job-search tooling.
+All three lanes are live and verified. Observe real friction: media edge cases (partial seasons, quality overrides), the client experience in daily use (segment accuracy, subtitle coverage, recommendation quality), and brief quality over days plus memory-layer growth. The next engineering lane is the owner's job-search tooling.
 
 ## Next lanes
 

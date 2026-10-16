@@ -1,6 +1,6 @@
 # Current State
 
-Latest evidence: **October 11, 2026 — full media automation live; Nova AI memory core operational**. The October 10 owner decision superseded the attended Level 1 flow with full automation; the Gate is stopped and latched as retained evidence. This update records the automation verification and the Nova AI build/verification evidence.
+Latest evidence: **October 16, 2026 — media client experience live; playback analytics live; full media automation and Nova AI memory core operational**. The October 15-16 media experience pass added skip intro/credits, scrub previews, hover trailers, always-on subtitles, a three-shelf recommendation layer, playback analytics, dashboard media cards, and new-media notifications. The Gate remains stopped and latched as retained evidence.
 
 ## How to read this page
 
@@ -19,10 +19,27 @@ No private addresses, hostnames, paths, domains, identifiers, credentials, or ap
 | Verified | Six titles auto-imported October 10; deletion removes files from disk; automatic re-acquisition after deletion works |
 | Seeding | Ratio target with no time cap; completed downloads retained for seeding after import |
 | TV backlog | Resumed; 30+ queued items flowing |
-| Gate | **RETIRED (owner decision 2026-10-11)** — service stays stopped; evidence and audit chain retained in place the owner chose RETIREMENT on October 11, 2026 (evidence retained) |
+| Gate | **RETIRED (owner decision 2026-10-11)** — service stays stopped; evidence and audit chain retained in place |
 | Regression | The 614-test Gate suite belongs to the retired attended flow; the automated path has no formal regression suite yet (stated limitation) |
 
 The attended Gate flow, its 614 PASS / zero skips regression, and the owner-driven Gran Dillama transaction remain documented in the Gate case study as historical evidence. They describe a superseded operating mode, not current operation.
+
+## Media client experience (built October 15-16, 2026)
+
+The pipeline below was already automated. This pass made the media server behave like a product.
+
+| Area | Status | Evidence | Public-safe limitation |
+|---|---|---|---|
+| Skip intro/credits | **Live** | Audio-fingerprint analyzer writes segments into the native media-segment API; scheduled daily; initial pass verified running; skip buttons verified active in the client | Segment accuracy per show varies; credits detection is noisier than intros |
+| Scrub previews and chapter images | **Live** | Native trickplay and chapter-image extraction enabled per library through the API; generation verified complete | Storage cost grows with library size |
+| Hover trailers | **Live** | Hover-preview plugin active; library identification pass completed: all 29 films identified, 24 with trailer links, 18 of 20 series with trailer links; five films are new releases with no trailers indexed upstream | Hover previews are a web-client feature only |
+| Subtitles | **Live** | User policy: always on, English preferred. Automation: quality-scored English-only pipeline, default-on for all movies and series, automatic text-format upgrades, six-hour schedule | A few niche titles have no published English subtitles; a local transcription fallback is a future option |
+| Recommendation layer | **Live** | Scrobble history feeds three virtual shelves (50 movie + 50 show recommendations browsable in-app) plus a next-seasons shelf; a privacy-first local engine and a ratings/diary plugin are also installed; scrobble provider excludes the virtual shelves | Recommendation quality depends on watch history volume |
+| Playback analytics | **Working** | Analytics service (app + own database) ingests playback reporting: watch time, top titles, device mix, live sessions; local-only exposure | Database backups follow the existing uneven backup coverage |
+| Dashboard media cards | **Live** | Continue-watching and recently-added cards served from the deterministic status writer; verified rendering live data | Card data refreshes on the status writer's schedule, not in real time |
+| New-media notifications | **Live** | Poster-art notifications wired to the owner's chat surface | Notification scope configurable per event type |
+
+Read the full [media experience case study](case-study-media-experience.md).
 
 ## Nova AI core
 
